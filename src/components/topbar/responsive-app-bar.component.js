@@ -91,6 +91,7 @@ const ResponsiveAppBar = () => {
               flexGrow: 1,
               display: { xs: 'none', md: 'flex' },
               justifyContent: { xs: 'right', md: 'right' },
+              columnGap: { xs: 'opx', md: '1em' },
             }}
           >
             {pages.map((page) => (

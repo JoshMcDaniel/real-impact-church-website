@@ -13,6 +13,8 @@ import Sermons from './components/sermons/sermons.component';
 import AboutUs from './components/about/about-us.component';
 import OnlineGiving from './components/online-giving/online-giving.component';
 import ContactUs from './components/contact/contact-us.component';
+import { ThemeProvider } from '@mui/material';
+import { theme } from './Theme';
 
 function App() {
   return (
@@ -20,17 +22,19 @@ function App() {
       <BrowserRouter>
         <React.Fragment>
           <CssBaseline />
-          <ResponsiveAppBar />
-          <Routes>
-            <Route path="/" exact element={<Home />} />
-            <Route path="/sermons" exact element={<Sermons />} />
-            <Route path="/about" exact element={<AboutUs />} />
-            <Route path="/events" exact element={<Events />} />
-            <Route path="/events/edit" exact element={<EditEvent />} />
-            <Route path="/events/create" exact element={<CreateEvent />} />
-            <Route path="/online-giving" exact element={<OnlineGiving />} />
-            <Route path="/contact" exact element={<ContactUs />} />
-          </Routes>
+          <ThemeProvider theme={theme}>
+            <ResponsiveAppBar />
+            <Routes>
+              <Route path="/" exact element={<Home />} />
+              <Route path="/sermons" exact element={<Sermons />} />
+              <Route path="/about" exact element={<AboutUs />} />
+              <Route path="/events" exact element={<Events />} />
+              <Route path="/events/edit" exact element={<EditEvent />} />
+              <Route path="/events/create" exact element={<CreateEvent />} />
+              <Route path="/online-giving" exact element={<OnlineGiving />} />
+              <Route path="/contact" exact element={<ContactUs />} />
+            </Routes>
+          </ThemeProvider>
         </React.Fragment>
       </BrowserRouter>
     </AppConfigContext.Provider>
