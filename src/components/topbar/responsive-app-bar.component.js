@@ -9,15 +9,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
 const ResponsiveAppBar = () => {
   const pages = [
-    'Sermons',
-    'About Us',
-    'Events',
-    'Edit Events',
-    'Give Online',
-    'Contact Us',
+    { displayText: 'Sermons', route: '/sermons' },
+    { displayText: 'About Us', route: '/about' },
+    { displayText: 'Events', route: '/events' },
+    { displayText: 'Edit Events', route: '/events/edit' },
+    { displayText: 'Give Online', route: '/online-giving' },
+    { displayText: 'Contact Us', route: '/contact' },
   ];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -46,7 +47,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="menu button"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -73,8 +74,13 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem
+                  key={page.displayText}
+                  component={Link}
+                  to={page.route}
+                  onClick={handleCloseNavMenu}
+                >
+                  <Typography textAlign="center">{page.displayText}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -90,11 +96,13 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.displayText}
                 onClick={handleCloseNavMenu}
+                component={Link}
+                to={page.route}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page.displayText}
               </Button>
             ))}
           </Box>
