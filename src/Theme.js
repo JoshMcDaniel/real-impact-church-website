@@ -5,5 +5,5 @@ import config from './contexts/app-config/config.json';
  * The custom application theme.
  */
 export const theme = createTheme({
-  ...config.theme,
+  ...config.website.theme,
 });

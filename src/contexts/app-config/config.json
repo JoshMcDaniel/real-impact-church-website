@@ -1,27 +1,43 @@
 {
-  "organization": {
-    "full_name": "Real Impact Church"
-  },
-  "theme": {
-    "palette": {
-      "type": "light",
-      "primary": {
-        "main": "#2f2f2f"
-      },
-      "secondary": {
-        "main": "#f50057"
-      },
-      "background": {
-        "default": "#f5f5f5"
-      },
-      "text": {
-        "primary": "rgba(37, 37, 37, 0.87)"
+  "website": {
+    "author": "Josh McDaniel",
+    "theme": {
+      "palette": {
+        "type": "light",
+        "primary": {
+          "main": "#2f2f2f"
+        },
+        "secondary": {
+          "main": "#f50057"
+        },
+        "info": {
+          "main": "#ffffff"
+        },
+        "background": {
+          "default": "#f5f5f5"
+        },
+        "text": {
+          "primary": "rgba(37, 37, 37, 0.87)",
+          "white": "#ffffff"
+        }
+      }
+    },
+    "events": {
+      "routes": {
+        "get_all_events": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/events"
       }
     }
   },
-  "events": {
-    "routes": {
-      "get_all_events": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/events"
+  "organization": {
+    "full_name": "Real Impact Church",
+    "contact": {
+      "phone": {
+        "primary": ""
+      },
+      "email": {
+        "primary": "Realimpactchurch@gmail.com"
+      },
+      "address": "35025 Huff Rd. Eustis, FL 32736"
     }
   }
 }

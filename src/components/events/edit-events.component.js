@@ -15,10 +15,12 @@ function EditEvent(props) {
   });
 
   const getAllEvents = () => {
-    axios.get(configContext.events.routes.get_all_events).then((res) => {
-      setEvents(res.data);
-      console.log(res.data);
-    });
+    axios
+      .get(configContext.website.events.routes.get_all_events)
+      .then((res) => {
+        setEvents(res.data);
+        console.log(res.data);
+      });
   };
 
   // const onChangeName = (e) => {
