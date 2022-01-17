@@ -3,32 +3,60 @@ import Box from '@mui/material/Box';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import { useContext } from 'react';
+import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 
 export const SocialIcons = (props) => {
+  const configContext = useContext(AppConfigContext);
+
+  const platforms = configContext.website.media.social_media;
   const iconButtonPadding = '8px 16px 8px 0';
+
+  const socialMediaPlatformIconMap = {
+    FACEBOOK: (
+      <FacebookIcon
+        sx={{
+          color: props.color,
+        }}
+        fontSize="large"
+      />
+    ),
+    INSTAGRAM: (
+      <InstagramIcon
+        sx={{
+          color: props.color,
+        }}
+        fontSize="large"
+      />
+    ),
+    YOUTUBE: (
+      <YouTubeIcon
+        sx={{
+          color: props.color,
+        }}
+        fontSize="large"
+      />
+    ),
+  };
+
   return (
     <Box sx={{ width: '100%' }} color={props.color}>
-      <IconButton
-        sx={{
-          padding: iconButtonPadding,
-        }}
-      >
-        <FacebookIcon color="info" fontSize="large" />
-      </IconButton>
-      <IconButton
-        sx={{
-          padding: iconButtonPadding,
-        }}
-      >
-        <InstagramIcon color="info" fontSize="large" />
-      </IconButton>
-      <IconButton
-        sx={{
-          padding: iconButtonPadding,
-        }}
-      >
-        <YouTubeIcon color="info" fontSize="large" />
-      </IconButton>
+      {platforms.map((i) => {
+        return (
+          <IconButton
+            sx={{
+              padding: iconButtonPadding,
+            }}
+            onClick={() => handleIconClick(i.path)}
+          >
+            {socialMediaPlatformIconMap[i.platform]}
+          </IconButton>
+        );
+      })}
     </Box>
   );
+};
+
+const handleIconClick = (path) => {
+  window.open(path);
 };

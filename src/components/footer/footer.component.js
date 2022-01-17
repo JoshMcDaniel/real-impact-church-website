@@ -14,7 +14,7 @@ export const Footer = () => {
 
   return (
     <Container
-      maxWidth="xl"
+      maxWidth="false"
       variant="footer"
       className="footer-container"
       sx={{
@@ -29,6 +29,10 @@ export const Footer = () => {
           gridAutoFlow: {
             xs: 'row',
             md: 'column',
+          },
+          rowGap: {
+            xs: '1rem',
+            md: '0',
           },
           justifyContent: {
             xs: 'start',

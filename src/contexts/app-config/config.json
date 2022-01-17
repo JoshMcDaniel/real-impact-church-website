@@ -26,6 +26,22 @@
       "routes": {
         "get_all_events": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/events"
       }
+    },
+    "media": {
+      "social_media": [
+        {
+          "platform": "FACEBOOK",
+          "path": "https://www.facebook.com/SeminoleSpringsBaptistChurch/"
+        },
+        {
+          "platform": "INSTAGRAM",
+          "path": "https://www.instagram.com/impactyouth412/"
+        },
+        {
+          "platform": "YOUTUBE",
+          "path": "https://www.youtube.com/channel/UC-2UUaVukuu7FgXmOH-jdmg"
+        }
+      ]
     }
   },
   "organization": {
