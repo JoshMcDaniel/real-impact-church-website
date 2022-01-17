@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-export default class Sermons extends Component {
+export default class Media extends Component {
   render() {
     return (
       <div>
-        <p>Sermons component!</p>
+        <p>Media component!</p>
       </div>
     );
   }

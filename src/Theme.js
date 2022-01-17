@@ -1,16 +1,9 @@
 import { createTheme } from '@mui/material';
+import config from './contexts/app-config/config.json';
 
 /**
  * The custom application theme.
  */
 export const theme = createTheme({
-  palette: {
-    type: 'light',
-    primary: {
-      main: '#2f2f2f',
-    },
-    secondary: {
-      main: '#f50057',
-    },
-  },
+  ...config.theme,
 });

@@ -9,12 +9,13 @@ import CreateEvent from './components/events/create-events.component';
 import ResponsiveAppBar from './components/topbar/responsive-app-bar.component';
 import { AppConfigContext } from './contexts/app-config/app-config.service';
 import appConfig from './contexts/app-config/config.json';
-import Sermons from './components/sermons/sermons.component';
 import AboutUs from './components/about/about-us.component';
 import OnlineGiving from './components/online-giving/online-giving.component';
 import ContactUs from './components/contact/contact-us.component';
-import { ThemeProvider } from '@mui/material';
+import { Container, ThemeProvider } from '@mui/material';
 import { theme } from './Theme';
+import Media from './components/media/media.component';
+import { Footer } from './components/footer/footer.component';
 
 function App() {
   return (
@@ -24,16 +25,19 @@ function App() {
           <CssBaseline />
           <ThemeProvider theme={theme}>
             <ResponsiveAppBar />
-            <Routes>
-              <Route path="/" exact element={<Home />} />
-              <Route path="/sermons" exact element={<Sermons />} />
-              <Route path="/about" exact element={<AboutUs />} />
-              <Route path="/events" exact element={<Events />} />
-              <Route path="/events/edit" exact element={<EditEvent />} />
-              <Route path="/events/create" exact element={<CreateEvent />} />
-              <Route path="/online-giving" exact element={<OnlineGiving />} />
-              <Route path="/contact" exact element={<ContactUs />} />
-            </Routes>
+            <Container className="content">
+              <Routes>
+                <Route path="/" exact element={<Home />} />
+                <Route path="/media" exact element={<Media />} />
+                <Route path="/about" exact element={<AboutUs />} />
+                <Route path="/events" exact element={<Events />} />
+                <Route path="/events/edit" exact element={<EditEvent />} />
+                <Route path="/events/create" exact element={<CreateEvent />} />
+                <Route path="/online-giving" exact element={<OnlineGiving />} />
+                <Route path="/contact" exact element={<ContactUs />} />
+              </Routes>
+            </Container>
+            <Footer />
           </ThemeProvider>
         </React.Fragment>
       </BrowserRouter>
