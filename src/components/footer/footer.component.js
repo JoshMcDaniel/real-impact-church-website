@@ -82,9 +82,10 @@ export const Footer = () => {
       <Container
         sx={{
           display: 'grid',
-          gridAutoFlow: 'column',
+          gridAutoFlow: { xs: 'row', sm: 'column' },
+          rowGap: '0.5rem',
           columnGap: '0.5rem',
-          width: 'fit-content',
+          width: { xs: '100%', sm: 'fit-content' },
         }}
       >
         <RegisteredFooterText color={theme.palette.text.white} />
@@ -92,6 +93,17 @@ export const Footer = () => {
           orientation="vertical"
           color={theme.palette.text.white}
           width="1px"
+          sx={{
+            display: { xs: 'none', sm: 'flex' },
+          }}
+        />
+        <Divider
+          orientation="horizontal"
+          color={theme.palette.text.white}
+          width="100%"
+          sx={{
+            display: { xs: 'flex', sm: 'none' },
+          }}
         />
         <WebsiteAuthor color={theme.palette.text.white} />
       </Container>

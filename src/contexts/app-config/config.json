@@ -20,6 +20,9 @@
           "primary": "rgba(37, 37, 37, 0.87)",
           "white": "#ffffff"
         }
+      },
+      "typography": {
+        "fontSize": 16
       }
     },
     "events": {

@@ -41,15 +41,16 @@ export const SocialIcons = (props) => {
 
   return (
     <Box sx={{ width: '100%' }} color={props.color}>
-      {platforms.map((i) => {
+      {platforms.map((platform, index) => {
         return (
           <IconButton
+            key={index}
             sx={{
               padding: iconButtonPadding,
             }}
-            onClick={() => handleIconClick(i.path)}
+            onClick={() => handleIconClick(platform.path)}
           >
-            {socialMediaPlatformIconMap[i.platform]}
+            {socialMediaPlatformIconMap[platform.platform]}
           </IconButton>
         );
       })}
