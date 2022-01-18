@@ -1,11 +1,14 @@
+import { Typography } from '@mui/material';
 import React, { Component } from 'react';
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        <p>Home component!</p>
-      </div>
+      <main>
+        <Typography variant="h4" component="h1">
+          Welcome
+        </Typography>
+      </main>
     );
   }
 }

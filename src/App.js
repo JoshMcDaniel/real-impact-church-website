@@ -10,8 +10,8 @@ import ResponsiveAppBar from './components/topbar/responsive-app-bar.component';
 import { AppConfigContext } from './contexts/app-config/app-config.service';
 import appConfig from './contexts/app-config/config.json';
 import AboutUs from './components/about/about-us.component';
-import OnlineGiving from './components/online-giving/online-giving.component';
-import ContactUs from './components/contact/contact-us.component';
+import Giving from './components/giving/giving.component';
+import Connect from './components/connect/connect.component';
 import { Container, ThemeProvider } from '@mui/material';
 import { theme } from './Theme';
 import Media from './components/media/media.component';
@@ -33,8 +33,8 @@ function App() {
                 <Route path="/events" exact element={<Events />} />
                 <Route path="/events/edit" exact element={<EditEvent />} />
                 <Route path="/events/create" exact element={<CreateEvent />} />
-                <Route path="/online-giving" exact element={<OnlineGiving />} />
-                <Route path="/contact" exact element={<ContactUs />} />
+                <Route path="/giving" exact element={<Giving />} />
+                <Route path="/connect" exact element={<Connect />} />
               </Routes>
             </Container>
             <Footer />

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-export default class ContactUs extends Component {
+export default class Giving extends Component {
   render() {
     return (
       <div>
-        <p>Contact Us component!</p>
+        <p>Giving component!</p>
       </div>
     );
   }

@@ -19,8 +19,8 @@ const ResponsiveAppBar = () => {
     { displayText: 'About Us', route: '/about' },
     { displayText: 'Events', route: '/events' },
     { displayText: 'Edit Events', route: '/events/edit' },
-    { displayText: 'Give Online', route: '/online-giving' },
-    { displayText: 'Contact Us', route: '/contact' },
+    { displayText: 'Giving', route: '/giving' },
+    { displayText: 'Connect', route: '/connect' },
   ];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);

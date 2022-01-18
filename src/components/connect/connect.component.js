@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-export default class OnlineGiving extends Component {
+export default class Connect extends Component {
   render() {
     return (
       <div>
-        <p>Online Giving component!</p>
+        <p>Connect component!</p>
       </div>
     );
   }
