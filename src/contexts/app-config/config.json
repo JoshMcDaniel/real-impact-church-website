@@ -25,6 +25,20 @@
         "fontSize": 16
       }
     },
+    "home": {
+      "intro_section": {
+        "images": {
+          "background_image": {
+            "name": "real_impact_church_home_main.jpg",
+            "description": "Church image"
+          }
+        },
+        "text": {
+          "primary": "Welcome",
+          "sub": "Ready to make a real impact for Christ?"
+        }
+      }
+    },
     "events": {
       "routes": {
         "get_all_events": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/events"
