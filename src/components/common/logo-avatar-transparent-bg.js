@@ -7,11 +7,7 @@ import { Avatar } from '@mui/material';
 export const LogoAvatarTransparentBg = () => {
   return (
     <Avatar variant="circular" className="logo-avatar">
-      <img
-        src="/images/logo/logo_no_bg.png"
-        alt="logo"
-        className="logo-image"
-      />
+      <img src="/images/logo/logo_no_bg.png" alt="logo" />
     </Avatar>
   );
 };

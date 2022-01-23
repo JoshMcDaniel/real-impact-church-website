@@ -10,7 +10,10 @@ import { useTheme } from '@emotion/react';
 
 export const Footer = () => {
   const configContext = useContext(AppConfigContext);
+  const footerContext = configContext.website.footer;
   const theme = useTheme();
+
+  const imgSrc = '/images/logo/' + footerContext.images.logo.name;
 
   return (
     <Container
@@ -40,22 +43,19 @@ export const Footer = () => {
           },
         }}
       >
-        {/* This Box is a placeholder for the logo/title image */}
-        <Box>
+        <Container
+          sx={{
+            display: 'grid',
+            alignItems: 'center',
+          }}
+        >
           <img
-            src="/images/logo/logo_no_bg.png"
-            alt="logo"
-            className="logo-image"
+            src={imgSrc}
+            alt={footerContext.images.logo.description}
+            height="50px"
+            width="150px"
           />
-          <Typography
-            variant="subtitle1"
-            component="span"
-            color={theme.palette.text.white}
-            fontFamily="'Luxurious Roman', cursive;"
-          >
-            {configContext.organization.full_name}
-          </Typography>
-        </Box>
+        </Container>
         <Container>
           <Typography variant="body1" color="secondary">
             Follow Us

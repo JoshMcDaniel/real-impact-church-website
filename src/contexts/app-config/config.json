@@ -67,6 +67,14 @@
           "path": "https://www.youtube.com/channel/UC-2UUaVukuu7FgXmOH-jdmg"
         }
       ]
+    },
+    "footer": {
+      "images": {
+        "logo": {
+          "name": "real_impact_transparent_logo.png",
+          "description": "Real Impact title and logo"
+        }
+      }
     }
   },
   "organization": {
