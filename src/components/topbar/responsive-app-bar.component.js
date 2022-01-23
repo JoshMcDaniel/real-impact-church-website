@@ -15,8 +15,8 @@ import { LogoAvatarTransparentBg } from '../common/logo-avatar-transparent-bg';
 const ResponsiveAppBar = () => {
   const pages = [
     { displayText: 'Home', route: '/' },
-    { displayText: 'Media', route: '/media' },
     { displayText: 'About Us', route: '/about' },
+    { displayText: 'Media', route: '/media' },
     { displayText: 'Events', route: '/events' },
     { displayText: 'Edit Events', route: '/events/edit' },
     { displayText: 'Giving', route: '/giving' },

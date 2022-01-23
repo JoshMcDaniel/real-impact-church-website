@@ -37,6 +37,14 @@
           "primary": "Welcome",
           "sub": "Ready to make a real impact for Christ?"
         }
+      },
+      "schedule_summary": {
+        "images": {
+          "background_image": {
+            "name": "",
+            "description": ""
+          }
+        }
       }
     },
     "events": {
@@ -71,6 +79,16 @@
         "primary": "Realimpactchurch@gmail.com"
       },
       "address": "35025 Huff Rd. Eustis, FL 32736"
+    },
+    "schedule": {
+      "primary_service": {
+        "day_of_week": "Sunday",
+        "time": "10:30am"
+      },
+      "secondary_service": {
+        "day_of_week": "Wednesday",
+        "time": "7:00pm"
+      }
     }
   }
 }
