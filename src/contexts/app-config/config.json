@@ -8,7 +8,7 @@
           "main": "#2f2f2f"
         },
         "secondary": {
-          "main": "#f50057"
+          "main": "#ff0000"
         },
         "info": {
           "main": "#ffffff"
@@ -86,17 +86,24 @@
       "email": {
         "primary": "Realimpactchurch@gmail.com"
       },
-      "address": "35025 Huff Rd. Eustis, FL 32736"
+      "address": "35025 Huff Rd. Eustis, FL 32736",
+      "google_maps_link": "https://www.google.com/maps/place/Seminole+Springs+Baptist+Church/@28.860075,-81.5202986,17z/data=!4m13!1m7!3m6!1s0x88e7a0a7d68f5de9:0x53bb1ae128131d39!2s35025+Huff+Rd,+Eustis,+FL+32736!3b1!8m2!3d28.860075!4d-81.5181099!3m4!1s0x88e7a0a7d68f5de9:0x7db13713aa8ed058!8m2!3d28.860075!4d-81.5181099"
     },
     "schedule": {
-      "primary_service": {
-        "day_of_week": "Sunday",
-        "time": "10:30am"
-      },
-      "secondary_service": {
-        "day_of_week": "Wednesday",
-        "time": "7:00pm"
-      }
+      "services": [
+        {
+          "title": "Worship Service",
+          "description": "Join us this Sunday! We're saving a place just for you!",
+          "day_of_week": "Sunday",
+          "time": "10:30am"
+        },
+        {
+          "title": "Worship On Wednesday (W.O.W.)",
+          "description": "Our W.O.W. service is a mid-week worship service to help get us all through the week. It's a great time of fellowship and praise and we would love to see you there!",
+          "day_of_week": "Wednesday",
+          "time": "7:00pm"
+        }
+      ]
     }
   }
 }
