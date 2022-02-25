@@ -18,7 +18,7 @@ export const Footer = () => {
   return (
     <Container
       maxWidth="false"
-      variant="footer"
+      component="footer"
       className="footer-container"
       sx={{
         display: 'grid',
@@ -44,9 +44,11 @@ export const Footer = () => {
         }}
       >
         <Container
+          component="figure"
           sx={{
             display: 'grid',
             alignItems: 'center',
+            margin: '0',
           }}
         >
           <img

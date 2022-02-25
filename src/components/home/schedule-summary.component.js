@@ -10,42 +10,62 @@ export const ScheduleSummary = () => {
   const services = configContext.organization.schedule.services;
 
   return (
-    <Box variant="section" display="grid">
+    <Box display="grid">
       <Container
+        component="section"
         height="fit-content"
         sx={{
           justifySelf: 'center',
           alignSelf: 'center',
           padding: '2rem',
           display: 'grid',
-          rowGap: '1.75rem',
+          rowGap: '2rem',
           textAlign: 'center',
         }}
       >
-        <Typography variant="h2">Worship Service Schedule</Typography>
-        {services.map((service, index) => (
-          <Box
-            key={index}
-            sx={{
-              display: 'grid',
-              rowGap: '1.75rem',
-            }}
-          >
-            <Typography variant="h4">{service.title}</Typography>
+        <Typography variant="h4">Schedule</Typography>
+        <Box
+          sx={{
+            display: 'grid',
+            rowGap: '1rem',
+          }}
+        >
+          {services.map((service, index) => (
             <Box
+              key={index}
               sx={{
                 display: 'grid',
-                rowGap: '0.25rem',
+                rowGap: '0.5rem',
               }}
             >
-              <Typography variant="subtitle2" fontSize="1.5rem">
-                Every {service.day_of_week} at {service.time}
-              </Typography>
-              <Typography variant="body1">{service.description}</Typography>
+              <Typography variant="h5">{service.title}</Typography>
+              <Box
+                sx={{
+                  display: 'grid',
+                  rowGap: '0.25rem',
+                }}
+              >
+                <Typography
+                  variant="subtitle1"
+                  fontWeight="700"
+                  color="secondary"
+                >
+                  {service.day_of_week} at <time>{service.time}</time>
+                </Typography>
+                <Typography variant="body2" component="summary">
+                  {service.description}
+                </Typography>
+              </Box>
+              {index !== services.length - 1 && (
+                <Divider
+                  sx={{
+                    marginTop: '1rem',
+                  }}
+                />
+              )}
             </Box>
-            {index !== services.length - 1 && <Divider />}
-          </Box>
-        ))}
+          ))}
+        </Box>
         <Fab
           variant="extended"
           size="medium"

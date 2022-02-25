@@ -54,14 +54,16 @@ export const HomeMainContent = () => {
           variant="subtitle1"
           component="p"
           color={color}
+          textAlign="center"
           display={{ xs: 'block', md: 'none' }}
         >
           {subText}
         </Typography>
         <Typography
-          variant="h4"
+          variant="h5"
           component="p"
           color={color}
+          textAlign="center"
           display={{ xs: 'none', md: 'block' }}
         >
           {subText}
