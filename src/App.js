@@ -25,8 +25,8 @@ function App() {
         <React.Fragment>
           <CssBaseline />
           <ThemeProvider theme={theme}>
-            <ResponsiveAppBar />
-            <Box className="content">
+            <ResponsiveAppBar className="header-container" />
+            <Box className="content-container">
               <Routes>
                 <Route path="/" exact element={<Home />} />
                 <Route path="/media" exact element={<Media />} />
@@ -38,7 +38,7 @@ function App() {
                 <Route path="/connect" exact element={<Connect />} />
               </Routes>
             </Box>
-            <Footer />
+            <Footer className="footer-container" />
           </ThemeProvider>
         </React.Fragment>
       </BrowserRouter>

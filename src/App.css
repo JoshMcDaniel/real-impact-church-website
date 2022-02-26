@@ -15,6 +15,14 @@
   height: 100vh;
 }
 
-.content {
-  flex: 1 0 auto;
+.header-container {
+  flex: 0 1 auto;
+}
+
+.content-container {
+  flex: 1 1 auto;
+}
+
+.footer-container {
+  flex: 0 1 auto;
 }

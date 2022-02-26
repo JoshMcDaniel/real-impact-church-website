@@ -7,13 +7,11 @@ import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 import { WebsiteAuthor } from './website-author.component';
 import { useTheme } from '@emotion/react';
+import { TitleLogoImage } from '../common/title-logo-image';
 
 export const Footer = () => {
   const configContext = useContext(AppConfigContext);
-  const footerContext = configContext.website.footer;
   const theme = useTheme();
-
-  const imgSrc = '/images/logo/' + footerContext.images.logo.name;
 
   return (
     <Container
@@ -43,21 +41,9 @@ export const Footer = () => {
           },
         }}
       >
-        <Container
-          component="figure"
-          sx={{
-            display: 'grid',
-            alignItems: 'center',
-            margin: '0',
-          }}
-        >
-          <img
-            src={imgSrc}
-            alt={footerContext.images.logo.description}
-            height="50px"
-            width="150px"
-          />
-        </Container>
+        <Box padding="0 1rem">
+          <TitleLogoImage />
+        </Box>
         <Container>
           <Typography variant="body1" color="secondary">
             Follow Us

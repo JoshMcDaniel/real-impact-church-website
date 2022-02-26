@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
-import { LogoAvatarTransparentBg } from '../common/logo-avatar-transparent-bg';
+import { TitleLogoImage } from '../common/title-logo-image';
 
 const ResponsiveAppBar = () => {
   const pages = [
@@ -24,6 +24,15 @@ const ResponsiveAppBar = () => {
   ];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [scrolledFromTop, setScrollchange] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => setScrollchange(window.scrollY > 0);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrolledFromTop]);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -34,11 +43,15 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="sticky">
+    <AppBar
+      sx={{
+        boxShadow: scrolledFromTop ? null : 'none',
+        backgroundColor: scrolledFromTop ? null : 'rgba(0,0,0,0)',
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <LogoAvatarTransparentBg />
-
+          <TitleLogoImage height="25px" />
           <Box
             sx={{
               flexGrow: 1,
