@@ -23,8 +23,8 @@ function App() {
     <AppConfigContext.Provider value={appConfig}>
       <BrowserRouter>
         <React.Fragment>
-          <CssBaseline />
           <ThemeProvider theme={theme}>
+            <CssBaseline enableColorScheme />
             <ResponsiveAppBar className="header-container" />
             <Box className="content-container">
               <Routes>
