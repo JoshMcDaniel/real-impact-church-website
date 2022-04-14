@@ -8,7 +8,7 @@
           "main": "rgb(32,32,32)"
         },
         "secondary": {
-          "main": "#e02e2e"
+          "main": "#b10404"
         },
         "info": {
           "main": "#ffffff"
@@ -31,7 +31,7 @@
       "intro_section": {
         "images": {
           "background_image": {
-            "name": "real_impact_church_home_main.jpg",
+            "name": "revival.jpg",
             "description": "Church image"
           }
         },
@@ -93,7 +93,7 @@
     },
     "logos": {
       "title_logo": {
-        "name": "real_impact_transparent_logo.png",
+        "name": "real_impact_transparent_darker_logo.png",
         "description": "Real Impact title and logo"
       }
     },

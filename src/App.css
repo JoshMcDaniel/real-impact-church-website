@@ -26,3 +26,8 @@
 .footer-container {
   flex: 0 1 auto;
 }
+
+.light-paper {
+  background-color: rgba(245, 245, 245, 0.8) !important;
+  padding: 1rem;
+}
