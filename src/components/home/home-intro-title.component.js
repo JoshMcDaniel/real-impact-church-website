@@ -1,14 +1,7 @@
-import { Container, Typography } from '@mui/material';
+import { Container } from '@mui/material';
 import Box from '@mui/material/Box';
+import LargeFontText from '../common/large-font-text.component';
 import './home-intro-title.component.css';
-
-export const LargeFontText = (props) => {
-  return (
-    <Typography variant="h1" fontSize={{ md: '12rem' }}>
-      {props.text}
-    </Typography>
-  );
-};
 
 export const HomeIntroTitle = () => {
   return (

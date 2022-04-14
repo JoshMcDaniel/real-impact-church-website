@@ -1,7 +1,7 @@
 import { Box, Container, Paper, Typography } from '@mui/material';
 import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
-import './home-styles.css';
+import './home-main-content.component.css';
 
 export const HomeMainContent = () => {
   const homeConfigContext = useContext(AppConfigContext).website.home;
@@ -54,3 +54,5 @@ export const HomeMainContent = () => {
     </Box>
   );
 };
+
+export default HomeMainContent;

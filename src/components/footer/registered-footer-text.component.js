@@ -4,9 +4,10 @@ import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 
 export const RegisteredFooterText = (props) => {
   const configContext = useContext(AppConfigContext);
+  const { registration_year, full_name } = configContext.organization;
   return (
     <Typography variant="caption" color={props.color}>
-      &reg; {new Date().getFullYear()} {configContext.organization.full_name}
+      &reg; {registration_year} {full_name}
     </Typography>
   );
 };

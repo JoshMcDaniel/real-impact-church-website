@@ -1,9 +1,10 @@
-import { Divider, Fab, Paper } from '@mui/material';
-import NavigationIcon from '@mui/icons-material/Navigation';
+import { Divider, Paper } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
 import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import Service from './schedule-summary-service.component';
+import NavBtn from '../common/nav-to-location-btn.component';
 
 export const ScheduleSummary = () => {
   const configContext = useContext(AppConfigContext);
@@ -36,24 +37,7 @@ export const ScheduleSummary = () => {
               rowGap: '0.5rem',
             }}
           >
-            <Typography variant="h5">{service.title}</Typography>
-            <Box
-              sx={{
-                display: 'grid',
-                rowGap: '0.25rem',
-              }}
-            >
-              <Typography
-                variant="subtitle1"
-                fontWeight="700"
-                color="secondary"
-              >
-                {service.day_of_week} at <time>{service.time}</time>
-              </Typography>
-              <Typography variant="body2" component="summary">
-                {service.description}
-              </Typography>
-            </Box>
+            <Service service={service} />
             {index !== services.length - 1 && (
               <Divider
                 sx={{
@@ -64,20 +48,7 @@ export const ScheduleSummary = () => {
           </Box>
         ))}
       </Box>
-      <Fab
-        variant="extended"
-        size="medium"
-        color="secondary"
-        aria-label="navigation button"
-        sx={{
-          width: 'fit-content',
-          justifySelf: 'center',
-        }}
-        href={configContext.organization.contact.google_maps_link}
-      >
-        <NavigationIcon sx={{ mr: 1 }} />
-        Take me to church!
-      </Fab>
+      <NavBtn label={'Take me to church!'} />
     </Paper>
   );
 };

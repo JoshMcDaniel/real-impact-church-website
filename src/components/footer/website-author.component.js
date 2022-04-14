@@ -10,3 +10,5 @@ export const WebsiteAuthor = (props) => {
     </Typography>
   );
 };
+
+export default WebsiteAuthor;

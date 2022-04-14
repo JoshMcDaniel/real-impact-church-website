@@ -48,7 +48,7 @@ export const Footer = () => {
           <Typography variant="body1" color="secondary">
             Follow Us
           </Typography>
-          <SocialIcons color={theme.palette.text.white} />
+          <SocialIcons />
         </Container>
         <Container
           sx={{
