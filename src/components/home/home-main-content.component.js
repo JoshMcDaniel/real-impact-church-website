@@ -2,7 +2,7 @@ import { useTheme } from '@emotion/react';
 import { Box, Container, Typography } from '@mui/material';
 import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
-import { centerFixedBackgroundImage } from './home.component';
+import { centerFixedBackgroundImage } from '../common/common-styles';
 
 export const HomeMainContent = () => {
   const theme = useTheme();

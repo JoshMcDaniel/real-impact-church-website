@@ -23,7 +23,7 @@
         }
       },
       "typography": {
-        "fontSize": 18,
+        "fontSize": 16,
         "fontFamily": "'Montserrat', 'Open Sans'"
       }
     },
