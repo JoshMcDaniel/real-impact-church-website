@@ -4,6 +4,9 @@ export const centerFixedBackgroundImage = (path) => {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    backgroundAttachment: 'fixed',
+    height: '100vh',
+    width: '100vw',
+    position: 'fixed',
+    zIndex: '-1',
   };
 };
