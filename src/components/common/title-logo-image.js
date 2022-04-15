@@ -4,9 +4,7 @@ import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 
 export const TitleLogoImage = (props) => {
   const configContext = useContext(AppConfigContext);
-  const logo = configContext.organization.logos.title_logo;
-  const { name, description } = logo;
-  const imgSrc = '/images/logo/' + name;
+  const { path, description } = configContext.organization.logos.title_logo;
 
   return (
     <Container
@@ -20,7 +18,7 @@ export const TitleLogoImage = (props) => {
       }}
     >
       <img
-        src={imgSrc}
+        src={path}
         alt={description}
         height={props.height}
         width={props.width}

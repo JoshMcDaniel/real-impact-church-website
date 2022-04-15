@@ -48,7 +48,7 @@ export const Footer = () => {
           <Typography variant="body1" color="secondary">
             Follow Us
           </Typography>
-          <SocialIcons />
+          <SocialIcons platforms={configContext.website.media.social_media} />
         </Container>
         <Container
           sx={{
@@ -59,10 +59,10 @@ export const Footer = () => {
           <Typography variant="body1" color="secondary">
             Contact Us
           </Typography>
-          <Typography variant="body2" color={theme.palette.text.white}>
+          <Typography variant="body2" color={theme.palette.text.light}>
             {configContext.organization.contact.email.primary}
           </Typography>
-          <Typography variant="body2" color={theme.palette.text.white}>
+          <Typography variant="body2" color={theme.palette.text.light}>
             {configContext.organization.contact.address}
           </Typography>
         </Container>
@@ -76,10 +76,10 @@ export const Footer = () => {
           width: { xs: '100%', sm: 'fit-content' },
         }}
       >
-        <RegisteredFooterText color={theme.palette.text.white} />
+        <RegisteredFooterText color={theme.palette.text.light} />
         <Divider
           orientation="vertical"
-          color={theme.palette.text.white}
+          color={theme.palette.text.light}
           width="1px"
           sx={{
             display: { xs: 'none', sm: 'flex' },
@@ -87,13 +87,13 @@ export const Footer = () => {
         />
         <Divider
           orientation="horizontal"
-          color={theme.palette.text.white}
+          color={theme.palette.text.light}
           width="100%"
           sx={{
             display: { xs: 'flex', sm: 'none' },
           }}
         />
-        <WebsiteAuthor color={theme.palette.text.white} />
+        <WebsiteAuthor color={theme.palette.text.light} />
       </Container>
     </Container>
   );

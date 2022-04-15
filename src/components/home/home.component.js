@@ -8,8 +8,9 @@ import { centerFixedBackgroundImage } from '../common/common-styles';
 
 export const Home = () => {
   const homeConfigContext = useContext(AppConfigContext).website.home;
-  const bgImage = homeConfigContext.intro_section.images.background_image;
-  const bgImagePath = '/images/home/' + bgImage.name;
+  const bgImagePath =
+    homeConfigContext.intro_section.images.background_image.path;
+
   const homeStyle = {
     ...centerFixedBackgroundImage(bgImagePath),
   };

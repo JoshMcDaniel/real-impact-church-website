@@ -1,25 +1,18 @@
 import { IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
-import { useContext } from 'react';
 import { socialMediaPlatformIconMap } from '../../constants/social-media-icon-map';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 
-export const SocialIcons = () => {
-  const configContext = useContext(AppConfigContext);
-
+export const SocialIcons = (props) => {
   const handleIconClick = (path) => window.open(path);
-
-  const platforms = configContext.website.media.social_media;
-  const iconButtonPadding = '8px 16px 8px 0';
 
   return (
     <Box sx={{ width: '100%' }} color="white">
-      {platforms.map((platform, index) => {
+      {props.platforms.map((platform, index) => {
         return (
           <IconButton
             key={index}
             sx={{
-              padding: iconButtonPadding,
+              padding: '8px 16px 8px 0',
             }}
             onClick={() => handleIconClick(platform.path)}
           >

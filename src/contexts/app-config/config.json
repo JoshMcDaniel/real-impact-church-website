@@ -19,7 +19,7 @@
         },
         "text": {
           "primary": "#4a4a4a",
-          "white": "#ffffff"
+          "light": "#ffffff"
         }
       },
       "typography": {
@@ -31,7 +31,7 @@
       "intro_section": {
         "images": {
           "background_image": {
-            "name": "revival.jpg",
+            "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
             "description": "Church image"
           }
         },
@@ -43,7 +43,7 @@
       "schedule_summary": {
         "images": {
           "background_image": {
-            "name": "",
+            "path": "",
             "description": ""
           }
         }
@@ -94,8 +94,12 @@
     },
     "logos": {
       "title_logo": {
-        "name": "real_impact_transparent_darker_logo.png",
+        "path": "https://drive.google.com/uc?id=1ZbBhSk2OE5QnetAmJTUy_mR1ZTjIpXrR",
         "description": "Real Impact title and logo"
+      },
+      "simple_logo": {
+        "path": "https://drive.google.com/uc?id=1iMpTO-Y23RifoK_9rxGMls6uPu4t2MVU",
+        "description": "Real Impact logo"
       }
     },
     "schedule": {
