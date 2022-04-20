@@ -20,6 +20,7 @@ export const ScheduleSummary = () => {
         display: 'grid',
         rowGap: '2rem',
         textAlign: 'center',
+        justifyContent: 'center',
       }}
     >
       <Typography variant="h4">Schedule</Typography>
@@ -35,6 +36,7 @@ export const ScheduleSummary = () => {
             sx={{
               display: 'grid',
               rowGap: '0.5rem',
+              maxWidth: '800px',
             }}
           >
             <Service service={service} />
