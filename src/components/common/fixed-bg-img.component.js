@@ -1,10 +1,22 @@
 import { centerFixedBackgroundImage } from '../common/common-styles';
 
+export const fixedBackgroundImageId = 'fixedBackgroundImage';
+
 export const FixedBackgroundImage = (props) => {
-  const style = {
-    ...centerFixedBackgroundImage(props.imgPath),
-  };
-  return <div style={style}></div>;
+  const src = props.imgPath;
+  const image = new Image();
+  image.addEventListener('load', () => {
+    const element = document.getElementById(fixedBackgroundImageId);
+    element.style.backgroundImage = 'url(' + src + ')';
+    if (props.onImageLoad) {
+      props.onImageLoad();
+    }
+  });
+  image.src = src;
+
+  return (
+    <div id={fixedBackgroundImageId} style={centerFixedBackgroundImage}></div>
+  );
 };
 
 export default FixedBackgroundImage;

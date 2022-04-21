@@ -31,3 +31,9 @@
   background-color: rgba(245, 245, 245, 0.8) !important;
   padding: 1rem;
 }
+
+.full-view-image {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
