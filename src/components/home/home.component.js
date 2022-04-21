@@ -1,4 +1,4 @@
-import { Box, Skeleton, Stack } from '@mui/material';
+import { Box, Fade, Stack } from '@mui/material';
 import React, { useState } from 'react';
 import { HomeMainContent } from './home-main-content.component';
 import { ScheduleSummary } from './schedule-summary.component';
@@ -11,37 +11,15 @@ import EventsSummary from './events-summary.component';
 import GivingSummary from './giving-summary.component';
 import ConnectSummary from './connect-summary.component';
 import { Loading } from '../common/loading.component';
-
-export const HomeContentLoading = () => {
-  return (
-    <Box
-      component="section"
-      position="absolute"
-      top="0"
-      bottom="0"
-      left="0"
-      right="0"
-      display="grid"
-      gap="2rem"
-      justifyContent="center"
-      alignContent="space-evenly"
-    >
-      <Skeleton variant="rectangular" width="80vw" height={120} />
-      <Skeleton />
-      <Skeleton animation="wave" />
-      <Skeleton animation={false} />
-    </Box>
-  );
-};
+import { HomeContentLoading } from './home-content-loading.component';
 
 export const Home = () => {
   const [isContentReady, setIsContentReady] = useState(false);
+  const onImageLoad = () => setIsContentReady(true);
 
   const homeConfigContext = useContext(AppConfigContext).website.home;
   const bgImagePath =
     homeConfigContext.intro_section.images.background_image.path;
-
-  const onImageLoad = () => setIsContentReady(true);
 
   return (
     <React.Fragment>
@@ -56,17 +34,28 @@ export const Home = () => {
           />
         </Box>
       ) : (
-        <Box component="main">
-          <HomeMainContent />
-          <Stack component="section" spacing={8}>
-            <ScheduleSummary />
-            <AboutSummary />
-            <MediaSummary />
-            <EventsSummary />
-            <GivingSummary />
-            <ConnectSummary />
-          </Stack>
-        </Box>
+        <Fade
+          direction="down"
+          // Will begin immediately after being added to the DOM
+          // which is when `isContentReady` is true.
+          in={true}
+          timeout={1_500}
+          easing={{
+            enter: 'cubic-bezier(0.7, 0, 0.84, 0)',
+          }}
+        >
+          <Box component="main">
+            <HomeMainContent />
+            <Stack component="section" spacing={8}>
+              <ScheduleSummary />
+              <AboutSummary />
+              <MediaSummary />
+              <EventsSummary />
+              <GivingSummary />
+              <ConnectSummary />
+            </Stack>
+          </Box>
+        </Fade>
       )}
     </React.Fragment>
   );
