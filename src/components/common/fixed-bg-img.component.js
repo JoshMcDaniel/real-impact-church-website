@@ -15,7 +15,10 @@ export const FixedBackgroundImage = (props) => {
   image.src = src;
 
   return (
-    <div id={fixedBackgroundImageId} style={centerFixedBackgroundImage}></div>
+    <div
+      id={fixedBackgroundImageId}
+      style={centerFixedBackgroundImage(props)}
+    ></div>
   );
 };
 

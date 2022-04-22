@@ -5,17 +5,17 @@
       "palette": {
         "type": "light",
         "primary": {
-          "main": "rgb(32,32,32)"
+          "main": "#2b2b2b"
         },
         "secondary": {
-          "main": "#b10404"
+          "main": "#d90429"
+        },
+        "background": {
+          "paper": "#f7fcff",
+          "default": "#edf2f4"
         },
         "info": {
           "main": "#ffffff"
-        },
-        "background": {
-          "default": "#fdfeff",
-          "paper": "#fdfeff"
         },
         "text": {
           "primary": "#4a4a4a",

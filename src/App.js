@@ -25,7 +25,7 @@ function App() {
         <React.Fragment>
           <ThemeProvider theme={theme}>
             <CssBaseline enableColorScheme />
-            <ResponsiveAppBar className="header-container" />
+            <ResponsiveAppBar />
             <Box className="content-container">
               <Routes>
                 <Route path="/" exact element={<Home />} />
@@ -38,7 +38,7 @@ function App() {
                 <Route path="/connect" exact element={<Connect />} />
               </Routes>
             </Box>
-            <Footer className="footer-container" />
+            <Footer />
           </ThemeProvider>
         </React.Fragment>
       </BrowserRouter>
