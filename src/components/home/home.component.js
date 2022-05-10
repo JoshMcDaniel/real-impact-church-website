@@ -26,7 +26,7 @@ export const Home = () => {
       }}
     >
       <Box>
-        <Stack component="main" spacing={8}>
+        <Stack component="main" spacing={0}>
           <HomeMainContent />
           <ScheduleSummary />
           <AboutSummary />

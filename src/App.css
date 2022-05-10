@@ -14,3 +14,7 @@
   height: 100vh;
   width: 100vw;
 }
+
+.diagonal-down-left {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
