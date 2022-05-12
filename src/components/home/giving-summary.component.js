@@ -4,7 +4,6 @@ import React from 'react';
 export const GivingSummary = () => {
   return (
     <Paper
-      className="light-paper"
       variant="outlined"
       component="section"
       sx={{

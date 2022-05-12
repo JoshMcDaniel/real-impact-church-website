@@ -4,7 +4,6 @@ import React from 'react';
 export const MediaSummary = () => {
   return (
     <Paper
-      className="light-paper"
       variant="outlined"
       component="section"
       sx={{

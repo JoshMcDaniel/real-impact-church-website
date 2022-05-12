@@ -4,7 +4,6 @@ import React from 'react';
 export const ConnectSummary = () => {
   return (
     <Paper
-      className="light-paper"
       variant="outlined"
       component="section"
       sx={{

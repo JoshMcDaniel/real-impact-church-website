@@ -11,7 +11,6 @@ export const ScheduleSummary = () => {
 
   return (
     <Paper
-      className="light-paper"
       component="section"
       sx={{
         padding: '1rem',
