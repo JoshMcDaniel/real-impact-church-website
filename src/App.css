@@ -18,3 +18,11 @@
 .diagonal-down-left {
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
+
+.grow-on-hover {
+  transition: transform 0.15s ease-in-out;
+}
+
+.grow-on-hover:hover {
+  transform: scale3d(1.01, 1.01, 1);
+}

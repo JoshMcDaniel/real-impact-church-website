@@ -19,7 +19,7 @@ export const ScheduleSummaryService = (props) => {
         }}
       >
         <Typography variant="subtitle1" fontWeight="700" color="secondary">
-          {day_of_week} at <time>{time}</time>
+          {day_of_week} | <time>{time}</time>
         </Typography>
         <Typography variant="body2" component="summary">
           {description}

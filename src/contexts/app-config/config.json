@@ -40,15 +40,63 @@
           "sub": "Ready to make a real impact for Christ?"
         }
       },
-      "about_summary": {
-        "summary_text": "Our desire is to know the Lord and make Him known.",
-        "image": {
-          "background_image": {
+      "home_summary_items": [
+        {
+          "image": {
             "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
-            "description": "Church image"
-          }
+            "description": ""
+          },
+          "info_text": {
+            "title": "Who are we?",
+            "subtitle": "We are a church"
+          },
+          "nav_to_route": "/about"
+        },
+        {
+          "image": {
+            "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
+            "description": ""
+          },
+          "info_text": {
+            "title": "Media",
+            "subtitle": "Checkout our latest and most popular sermons"
+          },
+          "nav_to_route": "/media"
+        },
+        {
+          "image": {
+            "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
+            "description": ""
+          },
+          "info_text": {
+            "title": "Events",
+            "subtitle": "Checkout our upcoming events"
+          },
+          "nav_to_route": "/events"
+        },
+        {
+          "image": {
+            "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
+            "description": ""
+          },
+          "info_text": {
+            "title": "Giving",
+            "subtitle": "Something about giving"
+          },
+          "nav_to_route": "/giving"
+        },
+        {
+          "image": {
+            "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
+            "description": ""
+          },
+          "info_text": {
+            "title": "Get connected",
+            "subtitle": "Something about getting connected"
+          },
+          "nav_to_route": "/connect"
         }
-      }
+      ]
     },
     "events": {
       "routes": {

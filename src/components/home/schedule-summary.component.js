@@ -4,7 +4,6 @@ import { Box } from '@mui/system';
 import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 import Service from './schedule-summary-service.component';
-import NavBtn from '../common/nav-to-location-btn.component';
 
 export const ScheduleSummary = () => {
   const configContext = useContext(AppConfigContext);
@@ -15,7 +14,7 @@ export const ScheduleSummary = () => {
       className="light-paper"
       component="section"
       sx={{
-        padding: '2rem',
+        padding: '1rem',
         display: 'grid',
         rowGap: '2rem',
         textAlign: 'center',
@@ -49,7 +48,6 @@ export const ScheduleSummary = () => {
           </Box>
         ))}
       </Box>
-      <NavBtn label={'Take me to church!'} />
     </Paper>
   );
 };
