@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Media extends Component {
-  render() {
-    return (
-      <div>
-        <p>Media component!</p>
-      </div>
-    );
-  }
-}
+export const Media = () => {
+  return (
+    <div>
+      <p>Media component!</p>
+    </div>
+  );
+};
+
+export default Media;

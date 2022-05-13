@@ -10,7 +10,7 @@ import CreateEvent from './components/events/create-events.component';
 import ResponsiveAppBar from './components/topbar/responsive-app-bar.component';
 import { AppConfigContext } from './contexts/app-config/app-config.service';
 import appConfig from './contexts/app-config/config.json';
-import AboutUs from './components/about/about-us.component';
+import About from './components/about/about.component';
 import Giving from './components/giving/giving.component';
 import Connect from './components/connect/connect.component';
 import { Box, ThemeProvider } from '@mui/material';
@@ -30,7 +30,7 @@ function App() {
               <Routes>
                 <Route path="/" exact element={<Home />} />
                 <Route path="/media" exact element={<Media />} />
-                <Route path="/about" exact element={<AboutUs />} />
+                <Route path="/about" exact element={<About />} />
                 <Route path="/events" exact element={<Events />} />
                 <Route path="/events/edit" exact element={<EditEvent />} />
                 <Route path="/events/create" exact element={<CreateEvent />} />

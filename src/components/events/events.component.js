@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Events extends Component {
-  constructor(props) {
-    super(props);
+export const Events = () => {
+  return (
+    <div>
+      <p>Events component!</p>
+    </div>
+  );
+};
 
-    this.state = {
-      events: [],
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <p>Events component!</p>
-      </div>
-    );
-  }
-}
+export default Events;

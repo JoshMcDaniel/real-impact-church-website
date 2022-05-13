@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 
-function EditEvent(props) {
+const EditEvent = (props) => {
   const [events, setEvents] = useState([]);
 
   const configContext = useContext(AppConfigContext);
@@ -74,6 +74,6 @@ function EditEvent(props) {
       <p>Events Edit component {events.length}!</p>
     </div>
   );
-}
+};
 
 export default EditEvent;

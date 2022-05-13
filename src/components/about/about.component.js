@@ -5,7 +5,7 @@ import NavTile from '../common/nav-tile.component';
 import SectionIntroImage from '../home/section-intro-image.component';
 import AboutDescription from './about-description.component';
 
-export const AboutUs = () => {
+export const About = () => {
   const aboutConfig = useContext(AppConfigContext).website.about;
   const aboutDescription = aboutConfig.about_description;
   const primaryText = aboutConfig.intro_section.text.primary;
@@ -65,4 +65,4 @@ export const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default About;

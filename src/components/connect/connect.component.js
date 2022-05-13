@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Connect extends Component {
-  render() {
-    return (
-      <div>
-        <p>Connect component!</p>
-      </div>
-    );
-  }
-}
+export const Connect = () => {
+  return (
+    <div>
+      <p>Connect component!</p>
+    </div>
+  );
+};
+
+export default Connect;
