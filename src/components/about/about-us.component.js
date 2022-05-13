@@ -1,4 +1,4 @@
-import { Box, Container, Paper, useMediaQuery } from '@mui/material';
+import { Box, Paper, useMediaQuery } from '@mui/material';
 import React, { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 import NavTile from '../common/nav-tile.component';
