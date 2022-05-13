@@ -1,34 +1,29 @@
-import { Box, Container, Paper, Skeleton, Typography } from '@mui/material';
-import React, { useContext, useState } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { Box, Container, Typography } from '@mui/material';
+import React from 'react';
 import FixedBackgroundImage from '../common/fixed-bg-img.component';
-import './home-main-content.component.css';
+import './section-intro-image.component.css';
 
-export const HomeMainContent = (props) => {
-  const [isContentReady, setIsContentReady] = useState(false);
-
-  const homeConfigContext = useContext(AppConfigContext).website.home;
-  const primaryText = homeConfigContext.intro_section.text.primary;
-  const subText = homeConfigContext.intro_section.text.sub;
-  const bgImagePath =
-    homeConfigContext.intro_section.images.background_image.path;
-
+export const SectionIntroImage = (props) => {
   const centerStyle = {
     display: 'grid',
     justifyContent: 'center',
   };
   const height = '50vh';
 
-  const onImageLoad = () => setIsContentReady(true);
+  const onImageLoad = () => {
+    if (props.onLoad) {
+      props.onLoad();
+    }
+  };
 
   return (
     <Box
       component="section"
-      className="home-main-content-container"
+      className="section-intro-image-container"
       height={height}
     >
       <FixedBackgroundImage
-        imgPath={bgImagePath}
+        imgPath={props.imagePath}
         onImageLoad={onImageLoad}
         height="100%"
         width="100%"
@@ -39,14 +34,14 @@ export const HomeMainContent = (props) => {
           component="h1"
           display={{ xs: 'block', md: 'none' }}
         >
-          {primaryText}
+          {props.primaryText}
         </Typography>
         <Typography
-          variant="h2"
+          variant="h3"
           component="h1"
           display={{ xs: 'none', md: 'block' }}
         >
-          {primaryText}
+          {props.primaryText}
         </Typography>
       </Container>
       <Container style={centerStyle}>
@@ -56,7 +51,7 @@ export const HomeMainContent = (props) => {
           textAlign="center"
           display={{ xs: 'block', md: 'none' }}
         >
-          {subText}
+          {props.subText}
         </Typography>
         <Typography
           variant="h5"
@@ -64,11 +59,11 @@ export const HomeMainContent = (props) => {
           textAlign="center"
           display={{ xs: 'none', md: 'block' }}
         >
-          {subText}
+          {props.subText}
         </Typography>
       </Container>
     </Box>
   );
 };
 
-export default HomeMainContent;
+export default SectionIntroImage;

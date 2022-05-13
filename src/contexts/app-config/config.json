@@ -30,7 +30,7 @@
     "home": {
       "intro_section": {
         "images": {
-          "background_image": {
+          "intro_image": {
             "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
             "description": "Leading others to Christ"
           }
@@ -97,6 +97,39 @@
           "nav_to_route": "/connect"
         }
       ]
+    },
+    "about": {
+      "intro_section": {
+        "images": {
+          "intro_image": {
+            "path": "https://drive.google.com/uc?id=1qgYyZirq42OTe3ZSPPdsnMGOCk7U6q9r",
+            "description": "Leading others to Christ"
+          }
+        },
+        "text": {
+          "primary": "Learn more about Real Impact",
+          "sub": "See how God is at work here"
+        }
+      },
+      "about_description": {
+        "title_text": "Who We Are",
+        "description": "We are a local church with a global vision. Our desire is to make a positive impact on this world with the love and good news of our Lord and Savior Jesus Christ. Are you looking for a church where you'll be loved, encouraged, and challenged? Do you want to hear preaching that teaches you about God's Word in a way that is easy to understand? Do you want to live a meaningful life that is pleasing to God and leaves a positive mark on society? Then look no further! Let us invite you to join us this Sunday. After all, \"We're Saving A Place Just For YOU!!!"
+      },
+      "nav_tiles": {
+        "_comment": "The tile routes must exist in the baseline.",
+        "tiles": [
+          {
+            "title": "What we believe",
+            "summary": "Learn more about what we, as a Christian church, believe.",
+            "link_text": "Learn More"
+          },
+          {
+            "title": "Meet the Staff",
+            "summary": "Meet some of our Staff that help make Real Impact Church feel like a family.",
+            "link_text": "Learn More"
+          }
+        ]
+      }
     },
     "events": {
       "routes": {
