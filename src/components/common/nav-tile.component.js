@@ -8,8 +8,13 @@ export const NavTile = (props) => {
         {props.title}
       </Typography>
       <Typography variant="hp">{props.summary}</Typography>
-      <Box display="grid" gap="1rem" gridAutoFlow="column" width="fit-content">
-        <Typography variant="p" color="secondary" fontWeight="bolder">
+      <Box
+        display="grid"
+        gap="0.5rem"
+        gridAutoFlow="column"
+        width="fit-content"
+      >
+        <Typography variant="p" color="secondary" fontWeight="bold">
           {props.linkText}
         </Typography>
         <Icon color="secondary">arrow_forward</Icon>
