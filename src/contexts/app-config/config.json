@@ -133,12 +133,14 @@
           {
             "title": "What we believe",
             "summary": "Learn more about what we, as a Christian church, believe.",
-            "link_text": "Learn More"
+            "link_text": "Learn More",
+            "route": "beliefs"
           },
           {
             "title": "Meet the Staff",
             "summary": "Meet some of our Staff that help make Real Impact Church feel like a family.",
-            "link_text": "Learn More"
+            "link_text": "Learn More",
+            "route": "staff"
           }
         ]
       }

@@ -1,4 +1,4 @@
-import { Icon, Typography } from '@mui/material';
+import { Icon, Link, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 
 export const NavTile = (props) => {
@@ -14,9 +14,17 @@ export const NavTile = (props) => {
         gridAutoFlow="column"
         width="fit-content"
       >
-        <Typography variant="p" color="secondary" fontWeight="bold">
+        {/* <Typography variant="p" color="secondary" fontWeight="bold">
           {props.linkText}
-        </Typography>
+        </Typography> */}
+        <Link
+          href={props.route}
+          variant="p"
+          color="secondary"
+          fontWeight="bold"
+        >
+          {props.linkText}
+        </Link>
         <Icon color="secondary">arrow_forward</Icon>
       </Box>
     </Box>

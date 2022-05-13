@@ -17,6 +17,8 @@ import { Box, ThemeProvider } from '@mui/material';
 import { theme } from './Theme';
 import Media from './components/media/media.component';
 import { Footer } from './components/footer/footer.component';
+import Beliefs from './components/beliefs/beliefs.component';
+import Staff from './components/staff/staff.component';
 
 function App() {
   return (
@@ -28,14 +30,16 @@ function App() {
             <ResponsiveAppBar />
             <Box className="content-container">
               <Routes>
-                <Route path="/" exact element={<Home />} />
-                <Route path="/media" exact element={<Media />} />
-                <Route path="/about" exact element={<About />} />
-                <Route path="/events" exact element={<Events />} />
-                <Route path="/events/edit" exact element={<EditEvent />} />
-                <Route path="/events/create" exact element={<CreateEvent />} />
-                <Route path="/giving" exact element={<Giving />} />
-                <Route path="/connect" exact element={<Connect />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/media" element={<Media />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/events" element={<Events />} />
+                <Route path="/events/edit" element={<EditEvent />} />
+                <Route path="/events/create" element={<CreateEvent />} />
+                <Route path="/giving" element={<Giving />} />
+                <Route path="/connect" element={<Connect />} />
+                <Route path="/beliefs" element={<Beliefs />} />
+                <Route path="/staff" element={<Staff />} />
               </Routes>
             </Box>
             <Footer />

@@ -58,6 +58,7 @@ export const About = () => {
             title={tile.title}
             summary={tile.summary}
             linkText={tile.link_text}
+            route={tile.route}
           />
         ))}
       </Paper>
