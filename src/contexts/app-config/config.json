@@ -468,6 +468,11 @@
         ]
       }
     },
+    "staff": {
+      "routes": {
+        "get_all_staff": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/personnel/staff"
+      }
+    },
     "events": {
       "routes": {
         "get_all_events": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/events"
