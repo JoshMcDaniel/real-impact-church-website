@@ -1,11 +1,48 @@
-import { Box, Typography, useMediaQuery } from '@mui/material';
+import { Box, Skeleton, Typography, useMediaQuery } from '@mui/material';
 import { AvatarWithFallbacks } from './avatar-with-fallbacks.component';
+
+const bioBlockConfig = {
+  avatar: {
+    maxHeight: '300px',
+    maxWidth: '300px',
+    justifySelf: 'center',
+  },
+};
+
+export const BioBlockSkeleton = () => {
+  const isMediumView = useMediaQuery((theme) => theme.breakpoints.up('md'));
+
+  return (
+    <Box
+      component="section"
+      display="grid"
+      gridTemplateColumns={isMediumView ? '300px 1fr' : '1fr'}
+      gridTemplateRows={isMediumView ? '1fr' : '300px 1fr'}
+      height={isMediumView ? '300px' : 'auto'}
+    >
+      <Skeleton
+        variant="circular"
+        sx={{
+          justifySelf: bioBlockConfig.avatar.justifySelf,
+          maxHeight: bioBlockConfig.avatar.maxHeight,
+          maxWidth: bioBlockConfig.avatar.maxWidth,
+          height: '100%',
+          width: '100%',
+        }}
+      />
+      <Box padding="2rem" display="grid" gap="1rem" height="fit-content">
+        <Skeleton variant="h5" height="2rem" />
+        <Skeleton variant="subtitle" height="1.5rem" />
+        <Skeleton variant="p" height="8rem" />
+      </Box>
+    </Box>
+  );
+};
 
 export const BioBlock = (props) => {
   const isMediumView = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const avatarProps = {
-    height: '300px',
-    width: '300px',
+    ...bioBlockConfig.avatar,
     alt: `${props.person.firstName} ${props.person.lastName}`,
     src: props.person.imgURL,
   };
@@ -14,9 +51,9 @@ export const BioBlock = (props) => {
     <Box
       component="section"
       display="grid"
-      maxWidth="960px"
-      gridAutoFlow={isMediumView ? 'column' : 'row'}
-      justifyItems={isMediumView ? 'start' : 'center'}
+      gridTemplateColumns={isMediumView ? '300px 1fr' : '1fr'}
+      gridTemplateRows={isMediumView ? '1fr' : '300px 1fr'}
+      height={isMediumView ? '300px' : 'auto'}
     >
       <AvatarWithFallbacks avatarProps={avatarProps} />
       <Box padding="2rem">
@@ -32,3 +69,5 @@ export const BioBlock = (props) => {
     </Box>
   );
 };
+
+export default BioBlock;

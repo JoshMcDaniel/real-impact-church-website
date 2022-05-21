@@ -469,6 +469,7 @@
       }
     },
     "staff": {
+      "header_text": "Real Impact Staff",
       "routes": {
         "get_all_staff": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/personnel/staff"
       }

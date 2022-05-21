@@ -14,17 +14,25 @@ export const AvatarWithFallbacks = (props) => {
         alt={props.avatarProps.alt}
         src={props.avatarProps.src}
         sx={{
-          width: props.avatarProps.height,
-          height: props.avatarProps.width,
-          display: imageLoaded ? 'block' : 'none',
+          display: imageLoaded ? 'grid' : 'none',
+          justifySelf: props.avatarProps.justifySelf,
+          maxHeight: props.avatarProps.maxHeight,
+          maxWidth: props.avatarProps.maxWidth,
+          width: '100%',
+          height: '100%',
         }}
         imgProps={{ onLoad: imageHasLoaded }}
       />
       {!imageLoaded && (
         <Skeleton
           variant="circular"
-          height={props.avatarProps.height}
-          width={props.avatarProps.width}
+          sx={{
+            justifySelf: props.avatarProps.justifySelf,
+            maxHeight: props.avatarProps.maxHeight,
+            maxWidth: props.avatarProps.maxWidth,
+            width: '100%',
+            height: '100%',
+          }}
         />
       )}
     </React.Fragment>
