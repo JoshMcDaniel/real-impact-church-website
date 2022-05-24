@@ -1,8 +1,14 @@
 import { Container } from '@mui/material';
 import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import * as React from 'react';
 
-export const TitleLogoImage = (props) => {
+type TitleLogoImageProps = {
+  height: string;
+  width: string;
+};
+
+export const TitleLogoImage = (props: TitleLogoImageProps) => {
   const configContext = useContext(AppConfigContext);
   const { path, description } = configContext.organization.logos.title_logo;
 

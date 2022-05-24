@@ -1,9 +1,16 @@
 import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
-import FixedBackgroundImage from '../common/fixed-bg-img.component';
 import './section-intro-image.component.css';
+import FixedBackgroundImage from '../common/fixed-bg-img.component';
 
-export const SectionIntroImage = (props) => {
+type SectionIntroImageProps = {
+  imagePath: string;
+  primaryText: string;
+  subText: string;
+  onLoad?: () => any;
+};
+
+export const SectionIntroImage = (props: SectionIntroImageProps) => {
   const centerStyle = {
     display: 'grid',
     justifyContent: 'center',

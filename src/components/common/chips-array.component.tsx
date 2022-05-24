@@ -3,12 +3,19 @@ import { styled } from '@mui/material/styles';
 import Chip from '@mui/material/Chip';
 import Box from '@mui/material/Box';
 
+type ChipsArrayProps = {
+  data: {
+    label: string;
+    link: string;
+  }[];
+};
+
 const ListItem = styled('li')(({ theme }) => ({
   margin: theme.spacing(0.5),
 }));
 
-export const ChipsArray = (props) => {
-  const handleClick = (link) => {
+export const ChipsArray = (props: ChipsArrayProps) => {
+  const handleClick = (link: string) => {
     if (!!link) {
       window.open(link);
     }

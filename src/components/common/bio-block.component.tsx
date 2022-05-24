@@ -1,5 +1,12 @@
-import { Box, Skeleton, Typography, useMediaQuery } from '@mui/material';
+import {
+  Box,
+  Skeleton,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import { AvatarWithFallbacks } from './avatar-with-fallbacks.component';
+import * as React from 'react';
 
 const bioBlockConfig = {
   avatar: {
@@ -10,7 +17,8 @@ const bioBlockConfig = {
 };
 
 export const BioBlockSkeleton = () => {
-  const isMediumView = useMediaQuery((theme) => theme.breakpoints.up('md'));
+  const theme = useTheme();
+  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
     <Box
@@ -31,16 +39,27 @@ export const BioBlockSkeleton = () => {
         }}
       />
       <Box padding="2rem" display="grid" gap="1rem" height="fit-content">
-        <Skeleton variant="h5" height="2rem" />
-        <Skeleton variant="subtitle" height="1.5rem" />
-        <Skeleton variant="p" height="8rem" />
+        <Skeleton height="2rem" />
+        <Skeleton height="1.5rem" />
+        <Skeleton height="8rem" />
       </Box>
     </Box>
   );
 };
 
-export const BioBlock = (props) => {
-  const isMediumView = useMediaQuery((theme) => theme.breakpoints.up('md'));
+type BioBlocProps = {
+  person: {
+    firstName: string;
+    lastName: string;
+    imgURL: string;
+    positionTitle: string;
+    description: string;
+  };
+};
+
+export const BioBlock = (props: BioBlocProps) => {
+  const theme = useTheme();
+  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
   const avatarProps = {
     ...bioBlockConfig.avatar,
     alt: `${props.person.firstName} ${props.person.lastName}`,
@@ -64,7 +83,7 @@ export const BioBlock = (props) => {
         <Typography variant="subtitle1">
           {props.person.positionTitle}
         </Typography>
-        <Typography variant="p">{props.person.description}</Typography>
+        <Typography>{props.person.description}</Typography>
       </Box>
     </Box>
   );

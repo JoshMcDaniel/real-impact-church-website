@@ -2,7 +2,7 @@ import { Box, Paper, useMediaQuery } from '@mui/material';
 import React, { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 import NavTile from '../common/nav-tile.component';
-import SectionIntroImage from '../home/section-intro-image.component';
+import SectionIntroImage from '../home/section-intro-image.component.tsx';
 import AboutDescription from './about-description.component';
 
 export const About = () => {

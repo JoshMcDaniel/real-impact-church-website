@@ -2,8 +2,13 @@ import { Fab } from '@mui/material';
 import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 import NavigationIcon from '@mui/icons-material/Navigation';
+import * as React from 'react';
 
-export const NavToLocationBtn = (props) => {
+type NavToLocationBtnProps = {
+  label: string;
+};
+
+export const NavToLocationBtn = (props: NavToLocationBtnProps) => {
   const configContext = useContext(AppConfigContext);
   return (
     <Fab

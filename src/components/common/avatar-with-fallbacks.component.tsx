@@ -1,7 +1,17 @@
 import { Avatar, Skeleton } from '@mui/material';
 import React, { useState } from 'react';
 
-export const AvatarWithFallbacks = (props) => {
+type AvatarProps = {
+  avatarProps: {
+    alt: string;
+    src: string;
+    justifySelf: string;
+    maxHeight: string;
+    maxWidth: string;
+  };
+};
+
+export const AvatarWithFallbacks = (props: AvatarProps) => {
   const [imageLoaded, setIsImageLoaded] = useState(false);
 
   const imageHasLoaded = () => {

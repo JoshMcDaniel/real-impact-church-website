@@ -10,7 +10,7 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import React from 'react';
-import IntroImage from './section-intro-image.component';
+import IntroImage from './section-intro-image.component.tsx';
 import { ScheduleSummary } from './schedule-summary.component';
 import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
