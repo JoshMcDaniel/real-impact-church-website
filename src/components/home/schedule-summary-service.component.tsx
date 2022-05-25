@@ -1,7 +1,19 @@
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
+import React from 'react';
 
-export const ScheduleSummaryService = (props) => {
+export type Service = {
+  title: string;
+  day_of_week: string;
+  time: string;
+  description: string;
+};
+
+export type ScheduleSummaryServiceProps = {
+  service: Service;
+};
+
+export const ScheduleSummaryService = (props: ScheduleSummaryServiceProps) => {
   const { title, day_of_week, time, description } = props.service;
 
   return (

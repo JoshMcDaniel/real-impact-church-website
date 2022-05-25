@@ -2,11 +2,11 @@ import { Icon, Link, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import * as React from 'react';
 
-type NavTileProps = {
+export type NavTileProps = {
   title: string;
   summary: string;
   route: string;
-  linkText: string;
+  link_text: string;
 };
 
 export const NavTile = (props: NavTileProps) => {
@@ -23,7 +23,7 @@ export const NavTile = (props: NavTileProps) => {
         width="fit-content"
       >
         <Link href={props.route} color="secondary" fontWeight="bold">
-          {props.linkText}
+          {props.link_text}
         </Link>
         <Icon color="secondary">arrow_forward</Icon>
       </Box>

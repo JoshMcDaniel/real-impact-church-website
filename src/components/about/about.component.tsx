@@ -1,19 +1,23 @@
-import { Box, Paper, useMediaQuery } from '@mui/material';
+import { Box, Paper, useMediaQuery, useTheme } from '@mui/material';
 import React, { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
-import NavTile from '../common/nav-tile.component';
-import SectionIntroImage from '../home/section-intro-image.component.tsx';
-import AboutDescription from './about-description.component';
+import NavTile, { NavTileProps } from '../common/nav-tile.component';
+import SectionIntroImage from '../home/section-intro-image.component';
+import AboutDescription, {
+  AboutDescriptionContainer,
+} from './about-description.component';
 
 export const About = () => {
   const aboutConfig = useContext(AppConfigContext).website.about;
-  const aboutDescription = aboutConfig.about_description;
+  const aboutDescription: AboutDescriptionContainer =
+    aboutConfig.about_description;
   const primaryText = aboutConfig.intro_section.text.primary;
   const subText = aboutConfig.intro_section.text.sub;
   const imagePath = aboutConfig.intro_section.images.intro_image.path;
-  const tiles = aboutConfig.nav_tiles.tiles;
+  const tiles: NavTileProps[] = aboutConfig.nav_tiles.tiles;
 
-  const isMediumView = useMediaQuery((theme) => theme.breakpoints.up('md'));
+  const theme = useTheme();
+  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
     <Box component="section">
@@ -35,7 +39,7 @@ export const About = () => {
           {aboutDescription.descriptions.map((item, index) => (
             <AboutDescription
               key={index}
-              title={item.title_text}
+              title_text={item.title_text}
               description={item.description}
             />
           ))}
@@ -57,7 +61,7 @@ export const About = () => {
             key={index}
             title={tile.title}
             summary={tile.summary}
-            linkText={tile.link_text}
+            link_text={tile.link_text}
             route={tile.route}
           />
         ))}

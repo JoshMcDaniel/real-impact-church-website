@@ -3,11 +3,13 @@ import { styled } from '@mui/material/styles';
 import Chip from '@mui/material/Chip';
 import Box from '@mui/material/Box';
 
+export type LabelLink = {
+  label: string;
+  link: string;
+};
+
 type ChipsArrayProps = {
-  data: {
-    label: string;
-    link: string;
-  }[];
+  data: LabelLink[];
 };
 
 const ListItem = styled('li')(({ theme }) => ({

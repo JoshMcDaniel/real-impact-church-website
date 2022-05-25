@@ -8,27 +8,38 @@ import {
   Paper,
   Stack,
   useMediaQuery,
+  useTheme,
 } from '@mui/material';
 import React from 'react';
-import IntroImage from './section-intro-image.component.tsx';
 import { ScheduleSummary } from './schedule-summary.component';
 import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 import { Link } from 'react-router-dom';
 import { AddressBlock } from '../common/address-block.component';
+import { Image } from '../../common/types';
+import SectionIntroImage from './section-intro-image.component';
+
+type HomeSummaryItem = {
+  image: Image;
+  info_text: {
+    title: string;
+    subtitle: string;
+  };
+  nav_to_route: string;
+};
 
 export const Home = () => {
   const homeConfigContext = useContext(AppConfigContext).website.home;
-  const items = homeConfigContext.home_summary_items;
+  const items: HomeSummaryItem[] = homeConfigContext.home_summary_items;
   const primaryText = homeConfigContext.intro_section.text.primary;
   const subText = homeConfigContext.intro_section.text.sub;
   const imagePath = homeConfigContext.intro_section.images.intro_image.path;
 
-  const isMediumView = useMediaQuery((theme) => theme.breakpoints.up('md'));
+  const theme = useTheme();
+  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
     <Fade
-      direction="down"
       // Will begin immediately after being added to the DOM
       in={true}
       timeout={1_500}
@@ -37,7 +48,7 @@ export const Home = () => {
       }}
     >
       <Box>
-        <IntroImage
+        <SectionIntroImage
           imagePath={imagePath}
           primaryText={primaryText}
           subText={subText}

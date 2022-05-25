@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 import { TitleLogoImage } from '../common/title-logo-image';
 import { HideOnScroll } from '../common/hide-on-scroll';
 
-const ResponsiveAppBar = (props) => {
+const ResponsiveAppBar = () => {
   const pages = [
     { displayText: 'Home', route: '/' },
     { displayText: 'About Us', route: '/about' },
@@ -26,8 +26,8 @@ const ResponsiveAppBar = (props) => {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget as any);
   };
 
   const handleCloseNavMenu = () => {
@@ -35,7 +35,7 @@ const ResponsiveAppBar = (props) => {
   };
 
   return (
-    <HideOnScroll {...props}>
+    <HideOnScroll>
       <AppBar position="sticky">
         <Container maxWidth="xl">
           <Toolbar disableGutters>

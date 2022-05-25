@@ -1,15 +1,17 @@
-import { Box, Typography, useMediaQuery } from '@mui/material';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 import { BioBlock, BioBlockSkeleton } from '../common/bio-block.component';
+import React from 'react';
 
 export const Staff = () => {
   const placeholders = new Array(2).fill(null);
   const [staff, setStaff] = useState([]);
 
   const staffConfig = useContext(AppConfigContext).website.staff;
-  const isMediumView = useMediaQuery((theme) => theme.breakpoints.up('md'));
+  const theme = useTheme();
+  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
 
   useEffect(() => {
     if (!staff.length) {

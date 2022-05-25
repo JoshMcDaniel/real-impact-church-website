@@ -1,8 +1,9 @@
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import * as React from 'react';
 
-export const socialMediaPlatformIconMap = {
+export const socialMediaPlatformIconMap: Record<string, any> = {
   FACEBOOK: (
     <FacebookIcon
       sx={{

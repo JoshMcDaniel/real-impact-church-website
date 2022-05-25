@@ -1,9 +1,19 @@
 import { IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
 import { socialMediaPlatformIconMap } from '../../constants/social-media-icon-map';
+import * as React from 'react';
 
-export const SocialIcons = (props) => {
-  const handleIconClick = (path) => window.open(path);
+export type SocialPlatform = {
+  platform: string;
+  path: string;
+};
+
+export type SocialIconsProps = {
+  platforms: SocialPlatform[];
+};
+
+export const SocialIcons = (props: SocialIconsProps) => {
+  const handleIconClick = (path: string) => window.open(path);
 
   return (
     <Box sx={{ width: '100%' }} color="white">

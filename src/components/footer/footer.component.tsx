@@ -6,16 +6,15 @@ import './footer.component.css';
 import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 import { WebsiteAuthor } from './website-author.component';
-import { useTheme } from '@emotion/react';
 import { TitleLogoImage } from '../common/title-logo-image';
+import * as React from 'react';
 
 export const Footer = () => {
   const configContext = useContext(AppConfigContext);
-  const theme = useTheme();
 
   return (
     <Container
-      maxWidth="false"
+      maxWidth={false}
       component="footer"
       className="footer-container"
       sx={{
@@ -28,15 +27,15 @@ export const Footer = () => {
           flexGrow: 1,
           display: 'grid',
           gridAutoFlow: {
-            xs: 'row',
+            sm: 'row',
             md: 'column',
           },
           rowGap: {
-            xs: '1rem',
+            sm: '1rem',
             md: '0',
           },
           justifyContent: {
-            xs: 'start',
+            sm: 'start',
             md: 'space-evenly',
           },
         }}
@@ -59,10 +58,10 @@ export const Footer = () => {
           <Typography variant="body1" color="secondary">
             Contact Us
           </Typography>
-          <Typography variant="body2" color={theme.palette.text.light}>
+          <Typography variant="body2" color={'white'}>
             {configContext.organization.contact.email.primary}
           </Typography>
-          <Typography variant="body2" color={theme.palette.text.light}>
+          <Typography variant="body2" color={'white'}>
             {configContext.organization.contact.address}
           </Typography>
         </Container>
@@ -70,30 +69,30 @@ export const Footer = () => {
       <Container
         sx={{
           display: 'grid',
-          gridAutoFlow: { xs: 'row', sm: 'column' },
+          gridAutoFlow: { sm: 'row', md: 'column' },
           rowGap: '0.5rem',
           columnGap: '0.5rem',
-          width: { xs: '100%', sm: 'fit-content' },
+          width: { sm: '100%', md: 'fit-content' },
         }}
       >
-        <RegisteredFooterText color={theme.palette.text.light} />
+        <RegisteredFooterText color={'white'} />
         <Divider
           orientation="vertical"
-          color={theme.palette.text.light}
-          width="1px"
+          style={{ background: 'white' }}
           sx={{
-            display: { xs: 'none', sm: 'flex' },
+            display: { sm: 'none', md: 'flex' },
+            width: '1px',
           }}
         />
         <Divider
           orientation="horizontal"
-          color={theme.palette.text.light}
-          width="100%"
+          variant="fullWidth"
+          style={{ background: 'white' }}
           sx={{
-            display: { xs: 'flex', sm: 'none' },
+            display: { sm: 'flex', md: 'none' },
           }}
         />
-        <WebsiteAuthor color={theme.palette.text.light} />
+        <WebsiteAuthor color={'white'} />
       </Container>
     </Container>
   );

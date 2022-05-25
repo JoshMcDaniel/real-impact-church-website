@@ -3,11 +3,15 @@ import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
 import { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
-import Service from './schedule-summary-service.component';
+import {
+  Service,
+  ScheduleSummaryService,
+} from './schedule-summary-service.component';
+import React from 'react';
 
 export const ScheduleSummary = () => {
   const configContext = useContext(AppConfigContext);
-  const services = configContext.organization.schedule.services;
+  const services: Service[] = configContext.organization.schedule.services;
 
   return (
     <Paper
@@ -36,7 +40,7 @@ export const ScheduleSummary = () => {
               maxWidth: '800px',
             }}
           >
-            <Service service={service} />
+            <ScheduleSummaryService service={service} />
             {index !== services.length - 1 && (
               <Divider
                 sx={{
