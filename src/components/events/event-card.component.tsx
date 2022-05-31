@@ -5,7 +5,6 @@ import {
   CardContent,
   Typography,
   Skeleton,
-  Box,
 } from '@mui/material';
 import React from 'react';
 import { OrgEvent } from './events.component';
