@@ -5,8 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/home/home.component';
 import Events from './components/events/events.component';
-import EditEvent from './components/events/edit-events.component';
-import CreateEvent from './components/events/create-events.component';
 import ResponsiveAppBar from './components/topbar/responsive-app-bar.component';
 import { AppConfigContext } from './contexts/app-config/app-config.service';
 import appConfig from './contexts/app-config/config.json';
@@ -19,6 +17,7 @@ import Media from './components/media/media.component';
 import { Footer } from './components/footer/footer.component';
 import Beliefs from './components/beliefs/beliefs.component';
 import Staff from './components/staff/staff.component';
+import { NotFound } from './components/not-found/not-found.component';
 
 function App() {
   return (
@@ -34,12 +33,11 @@ function App() {
                 <Route path="/media" element={<Media />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/events" element={<Events />} />
-                <Route path="/events/edit" element={<EditEvent />} />
-                <Route path="/events/create" element={<CreateEvent />} />
                 <Route path="/giving" element={<Giving />} />
                 <Route path="/connect" element={<Connect />} />
                 <Route path="/beliefs" element={<Beliefs />} />
                 <Route path="/staff" element={<Staff />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </Box>
             <Footer />

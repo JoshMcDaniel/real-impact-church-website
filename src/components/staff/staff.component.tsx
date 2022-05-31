@@ -29,11 +29,9 @@ export const Staff = () => {
   return (
     <Box
       component="main"
-      display="grid"
+      className="center-container"
       gap="2rem"
-      padding={isMediumView ? '2rem' : '2rem'}
-      maxWidth="1140px"
-      margin="auto"
+      padding={isMediumView ? '2rem' : '1rem'}
     >
       <Typography variant="h4" component="h1" fontWeight="bolder">
         {staffConfig.header_text}

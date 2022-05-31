@@ -38,7 +38,12 @@ export const BioBlockSkeleton = () => {
           width: '100%',
         }}
       />
-      <Box padding="2rem" display="grid" gap="1rem" height="fit-content">
+      <Box
+        padding={isMediumView ? '2rem' : '1rem'}
+        display="grid"
+        gap="1rem"
+        height="fit-content"
+      >
         <Skeleton height="2rem" />
         <Skeleton height="1.5rem" />
         <Skeleton height="8rem" />
@@ -75,7 +80,7 @@ export const BioBlock = (props: BioBlocProps) => {
       height={isMediumView ? '300px' : 'auto'}
     >
       <AvatarWithFallbacks avatarProps={avatarProps} />
-      <Box padding="2rem">
+      <Box padding={isMediumView ? '2rem' : '2rem 1rem'}>
         <Typography
           variant="h5"
           fontWeight="bold"

@@ -475,6 +475,7 @@
       }
     },
     "events": {
+      "header_text": "Events",
       "routes": {
         "get_all_events": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/events"
       }

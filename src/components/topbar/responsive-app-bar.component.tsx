@@ -19,7 +19,6 @@ const ResponsiveAppBar = () => {
     { displayText: 'About Us', route: '/about' },
     { displayText: 'Media', route: '/media' },
     { displayText: 'Events', route: '/events' },
-    { displayText: 'Edit Events', route: '/events/edit' },
     { displayText: 'Giving', route: '/giving' },
     { displayText: 'Connect', route: '/connect' },
   ];
