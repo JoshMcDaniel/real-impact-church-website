@@ -471,13 +471,14 @@
     "staff": {
       "header_text": "Real Impact Staff",
       "routes": {
-        "get_all_staff": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/personnel/staff"
+        "get_all_staff": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/personnel/staff/getAllStaff"
       }
     },
     "events": {
       "header_text": "Events",
       "routes": {
-        "get_all_events": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/events"
+        "get_all_events": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/events/getAllEvents",
+        "get_event": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/events/getEvent"
       }
     },
     "media": {
