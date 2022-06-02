@@ -7,11 +7,12 @@ import {
   useTheme,
 } from '@mui/material';
 import axios, { AxiosRequestConfig } from 'axios';
+import dayjs from 'dayjs';
 import React, { useContext, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { getWeekDayName } from '../../common/date-time-constants';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 import SectionIntroImage from '../home/section-intro-image.component';
-import EventCard from './event-card.component';
 import { OrgEvent } from './events.component';
 import NoEvents from './no-events.component';
 
@@ -41,9 +42,10 @@ const SelectedEvent = () => {
     axios.get(eventsConfig.routes.get_event, config).then((res) => {
       setEvent(res.data);
       setRequestPending(false);
-      console.log(res.data);
     });
   };
+
+  const eventDate = dayjs(event?.date);
 
   return (
     <Box component="main" className="center-container">
@@ -65,7 +67,27 @@ const SelectedEvent = () => {
                 padding: '1rem',
               }}
             >
-              {event ? new Date(event.date) : <Skeleton />}
+              {event ? (
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gap: '0.25rem',
+                  }}
+                >
+                  <Typography>
+                    {event.date ? getWeekDayName(eventDate) : <Skeleton />}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontWeight: 'bolder',
+                    }}
+                  >
+                    {event.date ? eventDate.format('MMM, DD') : <Skeleton />}
+                  </Typography>
+                </Box>
+              ) : (
+                <Skeleton />
+              )}
             </Paper>
           </Box>
         </Box>

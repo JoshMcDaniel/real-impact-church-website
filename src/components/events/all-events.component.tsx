@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import EventCard from './event-card.component';
 import NoEvents from './no-events.component';
+import { Link } from 'react-router-dom';
 
 export const AllEvents = () => {
   const [events, setEvents] = React.useState<OrgEvent[]>([]);
@@ -52,7 +53,13 @@ export const AllEvents = () => {
         >
           {(events.length > 0 ? events : Array.from(new Array(3))).map(
             (event, index) => (
-              <EventCard key={index} event={event} />
+              <Link
+                key={event?.route || index}
+                to={`${event?.route || '#'}`}
+                style={{ textDecoration: 'none' }}
+              >
+                <EventCard event={event} />
+              </Link>
             )
           )}
         </Box>
