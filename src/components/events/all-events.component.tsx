@@ -3,15 +3,15 @@ import { useTheme } from '@mui/system';
 import axios from 'axios';
 import React, { useContext, useEffect } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
-import { OrgEvent } from './events.component';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import EventCard from './event-card.component';
 import NoEvents from './no-events.component';
 import { Link } from 'react-router-dom';
+import { Event, OrgEvent } from './Event';
 
 export const AllEvents = () => {
-  const [events, setEvents] = React.useState<OrgEvent[]>([]);
+  const [events, setEvents] = React.useState<Event[]>([]);
   const [requestPending, setRequestPending] = React.useState<boolean>(false);
 
   const eventsConfig = useContext(AppConfigContext).website.events;
@@ -29,7 +29,8 @@ export const AllEvents = () => {
     setRequestPending(true);
 
     axios.get(eventsConfig.routes.get_all_events).then((res) => {
-      setEvents(res.data);
+      const events = res.data.map((e: OrgEvent) => new Event(e));
+      setEvents(events);
       setRequestPending(false);
     });
   };

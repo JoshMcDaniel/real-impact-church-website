@@ -7,9 +7,9 @@ import {
   Skeleton,
 } from '@mui/material';
 import React from 'react';
-import { OrgEvent } from './events.component';
+import { Event } from './Event';
 
-export const EventCard = (props: { event: OrgEvent }) => {
+export const EventCard = (props: { event: Event }) => {
   return (
     <Card raised>
       <CardActionArea>

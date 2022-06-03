@@ -7,17 +7,15 @@ import {
   useTheme,
 } from '@mui/material';
 import axios, { AxiosRequestConfig } from 'axios';
-import dayjs from 'dayjs';
 import React, { useContext, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { getWeekDayName } from '../../common/date-time-constants';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
 import SectionIntroImage from '../home/section-intro-image.component';
-import { OrgEvent } from './events.component';
+import { Event } from './Event';
 import NoEvents from './no-events.component';
 
 const SelectedEvent = () => {
-  const [event, setEvent] = React.useState<OrgEvent>();
+  const [event, setEvent] = React.useState<Event>();
   const [requestPending, setRequestPending] = React.useState<boolean>(false);
 
   const eventsConfig = useContext(AppConfigContext).website.events;
@@ -40,12 +38,10 @@ const SelectedEvent = () => {
     };
 
     axios.get(eventsConfig.routes.get_event, config).then((res) => {
-      setEvent(res.data);
+      setEvent(new Event(res.data));
       setRequestPending(false);
     });
   };
-
-  const eventDate = dayjs(event?.date);
 
   return (
     <Box component="main" className="center-container">
@@ -75,14 +71,18 @@ const SelectedEvent = () => {
                   }}
                 >
                   <Typography>
-                    {event.date ? getWeekDayName(eventDate) : <Skeleton />}
+                    {!!event ? event.dayOfWeek : <Skeleton />}
                   </Typography>
                   <Typography
                     sx={{
                       fontWeight: 'bolder',
                     }}
                   >
-                    {event.date ? eventDate.format('MMM, DD') : <Skeleton />}
+                    {event?.dateAsDateObj ? (
+                      event.dateAsDateObj.format('MMM, DD')
+                    ) : (
+                      <Skeleton />
+                    )}
                   </Typography>
                 </Box>
               ) : (
