@@ -8,7 +8,8 @@ export type OrgEvent = {
   description: string;
   imageUrl: string;
   date: string;
-  time: string;
+  startTime: string;
+  endTime: string;
   location: string;
 };
 
@@ -54,8 +55,12 @@ export class Event {
     return '';
   }
 
-  get time(): string {
-    return this.event.time;
+  get startTime(): string {
+    return this.event.startTime;
+  }
+
+  get endTime(): string {
+    return this.event.endTime;
   }
 
   get location(): string {

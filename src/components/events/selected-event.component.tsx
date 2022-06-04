@@ -1,7 +1,7 @@
 import {
   Box,
-  Paper,
-  Skeleton,
+  Card,
+  CardMedia,
   Typography,
   useMediaQuery,
   useTheme,
@@ -10,9 +10,11 @@ import axios, { AxiosRequestConfig } from 'axios';
 import React, { useContext, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
-import SectionIntroImage from '../home/section-intro-image.component';
+import LoadingIndication from '../common/loading-indication.component';
 import { Event } from './Event';
-import NoEvents from './no-events.component';
+import EventDateTimeCard from './event-date-time-card.component';
+import EventDetailsCard from './event-details-card.component';
+import SelectedEventNotFound from './selected-event-not-found.component';
 
 const SelectedEvent = () => {
   const [event, setEvent] = React.useState<Event>();
@@ -38,59 +40,48 @@ const SelectedEvent = () => {
     };
 
     axios.get(eventsConfig.routes.get_event, config).then((res) => {
-      setEvent(new Event(res.data));
+      if (res.data) {
+        setEvent(new Event(res.data));
+      }
       setRequestPending(false);
     });
   };
 
   return (
     <Box component="main" className="center-container">
-      {!requestPending && !event ? (
-        <NoEvents />
-      ) : (
+      {!requestPending && event ? (
         <Box>
-          <SectionIntroImage
-            imagePath={event?.imageUrl || ''}
-            primaryText={''}
-            subText={''}
-          />
-          <Box gap="2rem" padding={isMediumView ? '2rem' : '1rem'}>
-            <Typography variant="h3" component="h1">
-              {event ? event.name : <Skeleton />}
+          <Card raised>
+            <CardMedia
+              component="img"
+              image={event.imageUrl}
+              alt={event.name}
+            />
+          </Card>
+          <Box
+            display="grid"
+            gap="2rem"
+            padding={isMediumView ? '2rem' : '1rem'}
+          >
+            <Typography variant="h4" component="h1" fontWeight="bolder">
+              {event.name}
             </Typography>
-            <Paper
+            <Box
               sx={{
-                padding: '1rem',
+                display: 'grid',
+                gap: '1rem',
+                gridTemplateColumns: isMediumView ? '1fr 1fr' : '1fr',
               }}
             >
-              {event ? (
-                <Box
-                  sx={{
-                    display: 'grid',
-                    gap: '0.25rem',
-                  }}
-                >
-                  <Typography>
-                    {!!event ? event.dayOfWeek : <Skeleton />}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontWeight: 'bolder',
-                    }}
-                  >
-                    {event?.dateAsDateObj ? (
-                      event.dateAsDateObj.format('MMM, DD')
-                    ) : (
-                      <Skeleton />
-                    )}
-                  </Typography>
-                </Box>
-              ) : (
-                <Skeleton />
-              )}
-            </Paper>
+              <EventDateTimeCard event={event} />
+              <EventDetailsCard event={event} />
+            </Box>
           </Box>
         </Box>
+      ) : requestPending ? (
+        <LoadingIndication loadingText="Retrieving event info..." />
+      ) : (
+        <SelectedEventNotFound />
       )}
     </Box>
   );
