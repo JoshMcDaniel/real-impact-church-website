@@ -18,11 +18,13 @@ import { Footer } from './components/footer/footer.component';
 import Beliefs from './components/beliefs/beliefs.component';
 import Staff from './components/staff/staff.component';
 import { NotFound } from './components/not-found/not-found.component';
+import ScrollToTop from './common/scroll-to-top';
 
 function App() {
   return (
     <AppConfigContext.Provider value={appConfig}>
       <BrowserRouter>
+        <ScrollToTop />
         <React.Fragment>
           <ThemeProvider theme={theme}>
             <CssBaseline enableColorScheme />
