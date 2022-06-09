@@ -14,6 +14,7 @@ import LoadingIndication from '../common/loading-indication.component';
 import { Event } from './Event';
 import EventDateTimeCard from './event-date-time-card.component';
 import EventDetailsCard from './event-details-card.component';
+import EventLocationCard from './event-location-card.component';
 import SelectedEventNotFound from './selected-event-not-found.component';
 
 const SelectedEvent = () => {
@@ -73,7 +74,16 @@ const SelectedEvent = () => {
                 gridTemplateColumns: isMediumView ? '1fr 1fr' : '1fr',
               }}
             >
-              <EventDateTimeCard event={event} />
+              <Box
+                sx={{
+                  display: 'grid',
+                  gap: '1rem',
+                  gridAutoFlow: 'row',
+                }}
+              >
+                <EventDateTimeCard event={event} />
+                <EventLocationCard eventLocation={event.location} />
+              </Box>
               <EventDetailsCard event={event} />
             </Box>
           </Box>

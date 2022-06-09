@@ -1,7 +1,14 @@
 import dayjs from 'dayjs';
 import { getWeekDayName } from './../../common/date-time-constants';
 
-export type OrgEvent = {
+export type EventTypeLocation = {
+  streetAddress: string;
+  city: string;
+  state: string;
+  zipCode: number;
+}
+
+export type EventType = {
   _id: string;
   name: string;
   route: string;
@@ -10,12 +17,12 @@ export type OrgEvent = {
   date: string;
   startTime: string;
   endTime: string;
-  location: string;
+  location: EventTypeLocation;
 };
 
 export class Event {
 
-  constructor(private event: OrgEvent) { }
+  constructor(private event: EventType) { }
 
   get id(): string {
     return this.event._id;
@@ -63,7 +70,7 @@ export class Event {
     return this.event.endTime;
   }
 
-  get location(): string {
+  get location(): EventTypeLocation {
     return this.event.location;
   }
 }

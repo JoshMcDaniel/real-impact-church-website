@@ -27,9 +27,6 @@ export const EventCard = (props: { event: Event }) => {
           <Typography gutterBottom variant="h5" component="div">
             {!!props?.event?.name ? props.event.name : <Skeleton width="50%" />}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {props?.event?.description ? props.event.description : <Skeleton />}
-          </Typography>
         </CardContent>
       </CardActionArea>
     </Card>

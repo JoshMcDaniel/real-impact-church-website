@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import EventCard from './event-card.component';
 import NoEvents from './no-events.component';
 import { Link } from 'react-router-dom';
-import { Event, OrgEvent } from './Event';
+import { Event, EventType } from './Event';
 
 export const AllEvents = () => {
   const [events, setEvents] = React.useState<Event[]>([]);
@@ -29,7 +29,7 @@ export const AllEvents = () => {
     setRequestPending(true);
 
     axios.get(eventsConfig.routes.get_all_events).then((res) => {
-      const events = res.data.map((e: OrgEvent) => new Event(e));
+      const events = res.data.map((e: EventType) => new Event(e));
       setEvents(events);
       setRequestPending(false);
     });
