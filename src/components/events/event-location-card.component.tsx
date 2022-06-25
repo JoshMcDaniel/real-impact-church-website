@@ -3,13 +3,12 @@ import React from 'react';
 import { EventTypeLocation } from './Event';
 import MapIcon from '@mui/icons-material/Map';
 import './event-location-card.component.css';
-import { createLocationLinkFromAddress } from '../../common/location-link';
 import DirectionLink from '../../common/directions-link.component';
 
-const EventLocationCard = (props: { eventLocation: EventTypeLocation }) => {
-  const { streetAddress, city, state, zipCode } = props.eventLocation;
-  const fullAddress = `${streetAddress} ${city} ${state} ${zipCode}`;
-  const locationLink = createLocationLinkFromAddress(fullAddress);
+export const EventLocationCard = (props: {
+  eventLocation: EventTypeLocation;
+}) => {
+  const { streetAddress, city, state, zipCode, mapLink } = props.eventLocation;
 
   return (
     <Paper
@@ -24,7 +23,6 @@ const EventLocationCard = (props: { eventLocation: EventTypeLocation }) => {
         className="elc-container"
         sx={{
           width: 'fit-content',
-          columnGap: '2rem',
         }}
       >
         <MapIcon />
@@ -34,7 +32,7 @@ const EventLocationCard = (props: { eventLocation: EventTypeLocation }) => {
           {state} {zipCode}
         </Typography>
       </Box>
-      <DirectionLink href={locationLink} />
+      <DirectionLink href={mapLink} />
     </Paper>
   );
 };

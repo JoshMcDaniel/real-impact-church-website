@@ -6,6 +6,7 @@ export type EventTypeLocation = {
   city: string;
   state: string;
   zipCode: number;
+  mapLink: string;
 }
 
 export type EventType = {
