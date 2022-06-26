@@ -15,7 +15,7 @@ export const NavToLocationBtn = (props: NavToLocationBtnProps) => {
       variant="extended"
       size="medium"
       color="secondary"
-      aria-label="navigation button"
+      aria-label="Navigation button"
       sx={{
         width: 'fit-content',
         justifySelf: 'center',

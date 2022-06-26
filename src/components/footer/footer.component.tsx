@@ -62,7 +62,7 @@ export const Footer = () => {
             {configContext.organization.contact.email.primary}
           </Typography>
           <Typography variant="body2" color={'white'}>
-            {configContext.organization.contact.address}
+            {configContext.organization.contact.full_address}
           </Typography>
         </Container>
       </Box>

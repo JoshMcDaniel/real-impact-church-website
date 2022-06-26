@@ -1,6 +1,7 @@
-import { Icon, Link, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import * as React from 'react';
+import ArrowLink from './arrow-link.component';
 
 export type NavTileProps = {
   title: string;
@@ -16,17 +17,7 @@ export const NavTile = (props: NavTileProps) => {
         {props.title}
       </Typography>
       <Typography>{props.summary}</Typography>
-      <Box
-        display="grid"
-        gap="0.5rem"
-        gridAutoFlow="column"
-        width="fit-content"
-      >
-        <Link href={props.route} color="secondary" fontWeight="bold">
-          {props.link_text}
-        </Link>
-        <Icon color="secondary">arrow_forward</Icon>
-      </Box>
+      <ArrowLink route={props.route} linkText={props.link_text} />
     </Box>
   );
 };

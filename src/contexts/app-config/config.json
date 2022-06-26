@@ -98,6 +98,28 @@
         }
       ]
     },
+    "giving": {
+      "intro_section": {
+        "images": {
+          "intro_image": {
+            "path": "https://drive.google.com/uc?id=1qgYyZirq42OTe3ZSPPdsnMGOCk7U6q9r",
+            "description": "Giving to make a Real Impact"
+          }
+        },
+        "text": {
+          "primary": "Make a Real Impact through giving",
+          "sub": "Thank you for supporting our church and its ministries!"
+        }
+      },
+      "online_giving": {
+        "description": "We use Tithe.ly as a a safe, secure option for online giving.",
+        "further_info": {
+          "text": "More information",
+          "path": "https://get.tithe.ly/online-giving-for-churches"
+        },
+        "giving_path": "https://tithe.ly/give?c=1397210"
+      }
+    },
     "about": {
       "intro_section": {
         "images": {
@@ -516,7 +538,11 @@
       "email": {
         "primary": "RealImpactChurch@gmail.com"
       },
-      "address": "35025 Huff Rd. Eustis, FL 32736",
+      "full_address": "35025 Huff Rd. Eustis, FL 32736",
+      "street": "35025 Huff Rd.",
+      "city": "Eustis",
+      "state": "FL",
+      "zip_code": "32736",
       "google_maps_link": "https://goo.gl/maps/EThnrz52em1wM2wm9"
     },
     "logos": {

@@ -5,7 +5,7 @@ import * as React from 'react';
 
 export const AddressBlock = () => {
   const address =
-    React.useContext(AppConfigContext)?.organization?.contact?.address;
+    React.useContext(AppConfigContext)?.organization?.contact?.full_address;
   return (
     <Box
       component="section"

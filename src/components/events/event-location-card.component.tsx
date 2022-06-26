@@ -3,7 +3,7 @@ import React from 'react';
 import { EventTypeLocation } from './Event';
 import MapIcon from '@mui/icons-material/Map';
 import './event-location-card.component.css';
-import DirectionLink from '../../common/directions-link.component';
+import DirectionLink from '../common/directions-link.component';
 
 export const EventLocationCard = (props: {
   eventLocation: EventTypeLocation;
