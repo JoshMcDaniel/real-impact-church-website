@@ -1,6 +1,8 @@
 import { Box, Paper, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React, { useContext } from 'react';
 import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { ReactComponent as GiveInPerson } from './icons/give-in-person.svg';
+import { ReactComponent as GiveByMail } from './icons/give-by-mail.svg';
 
 const OtherGiving = () => {
   const theme = useTheme();
@@ -26,36 +28,50 @@ const OtherGiving = () => {
       >
         <Paper
           sx={{
-            padding: '2rem',
+            padding: isSmallView ? '2rem' : '1rem',
             textAlign: 'left',
             width: isSmallView ? '400px' : '100%',
+            display: 'grid',
+            gridTemplateColumns: '25% 1fr',
+            gap: isSmallView ? '2rem' : '1rem',
+            alignItems: 'center',
           }}
         >
-          <Typography variant="h6" fontWeight="bolder">
-            Give in person
-          </Typography>
-          <Typography>
-            Want to give in person? Feel free to give in person during one of
-            our services.
-          </Typography>
+          <GiveInPerson />
+          <Box display="grid" gridAutoFlow="row" gap="1rem">
+            <Typography variant="h6" fontWeight="bolder">
+              Give in person
+            </Typography>
+            <Typography>
+              Want to give in person? Feel free to give in person during one of
+              our services.
+            </Typography>
+          </Box>
         </Paper>
         <Paper
           sx={{
-            padding: '2rem',
+            padding: isSmallView ? '2rem' : '1rem',
             textAlign: 'left',
             width: isSmallView ? '400px' : '100%',
+            display: 'grid',
+            gridTemplateColumns: '25% 1fr',
+            gap: isSmallView ? '2rem' : '1rem',
+            alignItems: 'center',
           }}
         >
-          <Typography variant="h6" fontWeight="bolder">
-            Give by mail
-          </Typography>
-          <Typography>
-            {org.full_name}
-            <br />
-            {street} {city},
-            <br />
-            {state} {zip_code}
-          </Typography>
+          <GiveByMail />
+          <Box display="grid" gridAutoFlow="row" gap="1rem">
+            <Typography variant="h6" fontWeight="bolder">
+              Give by mail
+            </Typography>
+            <Typography>
+              {org.full_name}
+              <br />
+              {street} {city},
+              <br />
+              {state} {zip_code}
+            </Typography>
+          </Box>
         </Paper>
       </Box>
     </Box>
