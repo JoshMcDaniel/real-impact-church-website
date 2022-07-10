@@ -12,6 +12,7 @@ import CommonSnackbar, {
   CommonSnackbarState,
   initialCommonSnackbarState,
 } from '../common/common-snackbar.component';
+import LoadingIndication from '../common/loading-indication.component';
 import ConnectMainForm, {
   ConnectMainFormContent,
 } from './connect-main-form.component';
@@ -59,9 +60,11 @@ export const Connect = () => {
   };
 
   return (
-    <Box display="grid" padding={isMediumView ? '2rem' : '1rem'}>
-      <Typography variant="h4">Connect</Typography>
-      <Typography variant="subtitle1">{connectConfig.subtitle}</Typography>
+    <Box display="grid" gap="1rem" padding={isMediumView ? '2rem' : '1rem'}>
+      <Box>
+        <Typography variant="h4">Connect</Typography>
+        <Typography variant="subtitle1">{connectConfig.subtitle}</Typography>
+      </Box>
       <Divider></Divider>
       <Box display="grid" width="100%">
         <Box
@@ -77,6 +80,7 @@ export const Connect = () => {
           />
         </Box>
       </Box>
+      {requestPending && <LoadingIndication loadingText="Submitting form..." />}
       <CommonSnackbar
         open={snackbarState.open}
         onClose={() => setSnackbarState(initialCommonSnackbarState)}

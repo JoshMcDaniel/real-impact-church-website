@@ -33,7 +33,7 @@ const CommonSnackbar = (props: Props) => {
       anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       TransitionComponent={SlideTransition}
     >
-      <Alert severity={props.severity} sx={{ width: '100%' }}>
+      <Alert severity={props.severity} variant="filled" sx={{ width: '100%' }}>
         {props.message}
       </Alert>
     </Snackbar>
