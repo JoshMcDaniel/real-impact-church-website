@@ -1,0 +1,20 @@
+.category-chip {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  color: #fff !important;
+}
+
+.play-button {
+  position: absolute !important;
+  place-self: center;
+  z-index: 100;
+}
+
+.play-button-icon {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  color: #fff;
+}

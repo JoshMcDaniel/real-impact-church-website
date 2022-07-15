@@ -512,6 +512,16 @@
       }
     },
     "media": {
+      "media_page": {
+        "youtube": {
+          "most_recent": {
+            "number_of_videos": 5
+          },
+          "most_popular": {
+            "number_of_videos": 5
+          }
+        }
+      },
       "social_media": [
         {
           "platform": "FACEBOOK",
@@ -552,6 +562,12 @@
       "state": "FL",
       "zip_code": "32736",
       "google_maps_link": "https://goo.gl/maps/EThnrz52em1wM2wm9"
+    },
+    "social_media": {
+      "youtube": {
+        "api_url": "https://www.googleapis.com/youtube/v3/search?key=",
+        "channel_id": "UC-2UUaVukuu7FgXmOH-jdmg"
+      }
     },
     "logos": {
       "title_logo": {
