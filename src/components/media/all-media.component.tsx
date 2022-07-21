@@ -6,18 +6,19 @@ import {
   useTheme,
 } from '@mui/material';
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import {
+  useMediaConfig,
+  useOrganizationConfig,
+} from '../../config/app-config-hooks';
 import HorizontalScrollMedia from '../common/horizontal-scroll-media.component';
 import LoadingIndication from '../common/loading-indication.component';
 import MostRecentVideo from './most-recent-video.component';
 
 export const AllMedia = () => {
-  const socialConfig = useContext(AppConfigContext).organization.social_media;
-  const mediaConfig = useContext(AppConfigContext).website.media.media_page;
-
-  const { api_url, channel_id } = socialConfig.youtube;
+  const { api_url, channel_id } = useOrganizationConfig().social_media.youtube;
+  const { most_recent, most_popular } = useMediaConfig().media_page.youtube;
 
   const theme = useTheme();
   const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
@@ -33,7 +34,6 @@ export const AllMedia = () => {
   const isRequestPending = (): boolean =>
     recentRequestPending || popularRequestPending;
 
-  const { most_recent, most_popular } = mediaConfig.youtube;
   const channelUrl = `${api_url}${process.env.REACT_APP_YOUTUBE_API_KEY}&channelId=${channel_id}`;
 
   const getVideosUrl = (order: 'date' | 'viewCount', count: number): string => {

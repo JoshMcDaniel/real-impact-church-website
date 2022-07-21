@@ -3,14 +3,17 @@ import { Box } from '@mui/system';
 import { RegisteredFooterText } from './registered-footer-text.component';
 import { SocialIcons } from './social-icons.component';
 import './footer.component.css';
-import { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import {
+  useMediaConfig,
+  useOrganizationConfig,
+} from '../../config/app-config-hooks';
 import { WebsiteAuthor } from './website-author.component';
 import { TitleLogoImage } from '../common/title-logo-image';
 import * as React from 'react';
 
 export const Footer = () => {
-  const configContext = useContext(AppConfigContext);
+  const { social_media } = useMediaConfig();
+  const { email, full_address } = useOrganizationConfig().contact;
 
   return (
     <Container
@@ -47,7 +50,7 @@ export const Footer = () => {
           <Typography variant="body1" color="secondary">
             Follow Us
           </Typography>
-          <SocialIcons platforms={configContext.website.media.social_media} />
+          <SocialIcons platforms={social_media} />
         </Container>
         <Container
           sx={{
@@ -59,10 +62,10 @@ export const Footer = () => {
             Contact Us
           </Typography>
           <Typography variant="body2" color={'white'}>
-            {configContext.organization.contact.email.primary}
+            {email.primary}
           </Typography>
           <Typography variant="body2" color={'white'}>
-            {configContext.organization.contact.full_address}
+            {full_address}
           </Typography>
         </Container>
       </Box>

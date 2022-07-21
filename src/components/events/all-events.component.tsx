@@ -1,8 +1,8 @@
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/system';
 import axios from 'axios';
-import React, { useContext, useEffect } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import React, { useEffect } from 'react';
+import { useEventsConfig } from '../../config/app-config-hooks';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import EventCard from './event-card.component';
@@ -14,7 +14,7 @@ export const AllEvents = () => {
   const [events, setEvents] = React.useState<Event[]>([]);
   const [requestPending, setRequestPending] = React.useState<boolean>(false);
 
-  const eventsConfig = useContext(AppConfigContext).website.events;
+  const eventsConfig = useEventsConfig();
   const theme = useTheme();
   const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
 

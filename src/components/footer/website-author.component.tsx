@@ -1,13 +1,12 @@
 import { Typography } from '@mui/material';
-import { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { useAuthorConfig } from '../../config/app-config-hooks';
 import * as React from 'react';
 
 export const WebsiteAuthor = (props: { color: string }) => {
-  const configContext = useContext(AppConfigContext);
+  const { full_name } = useAuthorConfig();
   return (
     <Typography variant="caption" color={props.color}>
-      Developed by {configContext.website.author}
+      Developed by {full_name}
     </Typography>
   );
 };

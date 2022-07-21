@@ -1,6 +1,6 @@
 import { Box, Paper, useMediaQuery, useTheme } from '@mui/material';
-import React, { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import React from 'react';
+import { useAboutConfig } from '../../config/app-config-hooks';
 import NavTile, { NavTileProps } from '../common/nav-tile.component';
 import SectionIntroImage from '../home/section-intro-image.component';
 import AboutDescription, {
@@ -8,7 +8,7 @@ import AboutDescription, {
 } from './about-description.component';
 
 export const About = () => {
-  const aboutConfig = useContext(AppConfigContext).website.about;
+  const aboutConfig = useAboutConfig();
   const aboutDescription: AboutDescriptionContainer =
     aboutConfig.about_description;
   const primaryText = aboutConfig.intro_section.text.primary;

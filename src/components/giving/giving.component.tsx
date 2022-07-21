@@ -1,16 +1,14 @@
 import { Box, Paper } from '@mui/material';
-import React, { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import React from 'react';
+import { useGivingConfig } from '../../config/app-config-hooks';
 import SectionIntroImage from '../home/section-intro-image.component';
 import OnlineGiving from './online-giving.component';
 import OtherGiving from './other-giving.component';
 
 export const Giving = () => {
-  const givingConfig = useContext(AppConfigContext).website.giving;
-  const introSection = givingConfig.intro_section;
-  const introImage = introSection.images.intro_image;
-  const introText = introSection.text;
-  const onlineGiving = givingConfig.online_giving;
+  const { intro_section, online_giving } = useGivingConfig();
+  const introImage = intro_section.images.intro_image;
+  const introText = intro_section.text;
 
   return (
     <Box>
@@ -27,9 +25,9 @@ export const Giving = () => {
           }}
         >
           <OnlineGiving
-            description={onlineGiving.description}
-            furtherInfo={onlineGiving.further_info}
-            givingPath={onlineGiving.giving_path}
+            description={online_giving.description}
+            furtherInfo={online_giving.further_info}
+            givingPath={online_giving.giving_path}
           />
         </Paper>
         <Box

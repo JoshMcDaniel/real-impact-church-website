@@ -1,11 +1,9 @@
 import { Typography } from '@mui/material';
-import { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { useOrganizationConfig } from '../../config/app-config-hooks';
 import * as React from 'react';
 
 export const RegisteredFooterText = (props: { color: string }) => {
-  const configContext = useContext(AppConfigContext);
-  const { registration_year, full_name } = configContext.organization;
+  const { registration_year, full_name } = useOrganizationConfig();
   return (
     <Typography variant="caption" color={props.color}>
       &reg; {registration_year} {full_name}

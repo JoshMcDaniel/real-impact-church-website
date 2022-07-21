@@ -1,9 +1,7 @@
 import { createTheme } from '@mui/material';
-import config from './contexts/app-config/config.json';
+import themeConfig from './config/theme.json';
 
 /**
  * The custom application theme.
  */
-export const theme = createTheme({
-  ...config.website.theme,
-});
+export const theme = createTheme(themeConfig);

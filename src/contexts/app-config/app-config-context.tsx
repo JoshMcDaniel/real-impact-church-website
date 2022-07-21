@@ -1,5 +1,5 @@
 import React from 'react';
-import appConfig from './config.json';
+import appConfig from '../../config/config.json';
 
 /**
  * This context provides the application configuration data.

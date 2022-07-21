@@ -12,8 +12,7 @@ import {
 } from '@mui/material';
 import React from 'react';
 import { ScheduleSummary } from './schedule-summary.component';
-import { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { useHomeConfig } from '../../config/app-config-hooks';
 import { Link } from 'react-router-dom';
 import { AddressBlock } from '../common/address-block.component';
 import { Image } from '../../common/types';
@@ -29,7 +28,7 @@ type HomeSummaryItem = {
 };
 
 export const Home = () => {
-  const homeConfigContext = useContext(AppConfigContext).website.home;
+  const homeConfigContext = useHomeConfig();
   const items: HomeSummaryItem[] = homeConfigContext.home_summary_items;
   const primaryText = homeConfigContext.intro_section.text.primary;
   const subText = homeConfigContext.intro_section.text.sub;

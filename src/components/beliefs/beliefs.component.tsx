@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { useBeliefsConfig } from '../../config/app-config-hooks';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import ChipsArray, { LabelLink } from '../common/chips-array.component';
 import * as React from 'react';
@@ -20,8 +19,7 @@ export type BeliefsContainer = {
 };
 
 export const Beliefs = () => {
-  const beliefsConfig: BeliefsContainer =
-    useContext(AppConfigContext).website.beliefs;
+  const beliefsConfig: BeliefsContainer = useBeliefsConfig();
   const theme = useTheme();
   const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
 

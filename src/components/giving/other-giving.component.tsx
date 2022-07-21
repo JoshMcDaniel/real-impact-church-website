@@ -1,16 +1,15 @@
 import { Box, Paper, Typography, useMediaQuery, useTheme } from '@mui/material';
-import React, { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import React from 'react';
+import { useOrganizationConfig } from '../../config/app-config-hooks';
 import { ReactComponent as GiveInPerson } from './icons/give-in-person.svg';
 import { ReactComponent as GiveByMail } from './icons/give-by-mail.svg';
 
 const OtherGiving = () => {
+  const org = useOrganizationConfig();
+  const { street, city, state, zip_code } = org.contact;
   const theme = useTheme();
   const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
   const isSmallView = useMediaQuery(theme.breakpoints.up('sm'));
-
-  const org = useContext(AppConfigContext).organization;
-  const { street, city, state, zip_code } = org.contact;
 
   return (
     <Box display="grid" textAlign="center" justifyItems="center">

@@ -1,7 +1,7 @@
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import axios from 'axios';
-import { useContext, useEffect, useState } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { useEffect, useState } from 'react';
+import { useStaffConfig } from '../../config/app-config-hooks';
 import { BioBlock, BioBlockSkeleton } from '../common/bio-block.component';
 import React from 'react';
 
@@ -9,7 +9,7 @@ export const Staff = () => {
   const placeholders = new Array(2).fill(null);
   const [staff, setStaff] = useState([]);
 
-  const staffConfig = useContext(AppConfigContext).website.staff;
+  const { routes, header_text } = useStaffConfig();
   const theme = useTheme();
   const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
 
@@ -21,7 +21,7 @@ export const Staff = () => {
   }, []);
 
   const getAllStaff = () => {
-    axios.get(staffConfig.routes.get_all_staff).then((res) => {
+    axios.get(routes.get_all_staff).then((res) => {
       setStaff(res.data);
     });
   };
@@ -34,7 +34,7 @@ export const Staff = () => {
       padding={isMediumView ? '2rem' : '1rem'}
     >
       <Typography variant="h4" component="h1" fontWeight="bolder">
-        {staffConfig.header_text}
+        {header_text}
       </Typography>
       {staff.length > 0
         ? staff.map((person, index) => <BioBlock key={index} person={person} />)

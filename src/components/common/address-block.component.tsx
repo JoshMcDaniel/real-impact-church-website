@@ -1,11 +1,10 @@
 import { Box, Divider, Typography } from '@mui/material';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { useOrganizationConfig } from '../../config/app-config-hooks';
 import NavBtn from './nav-to-location-btn.component';
 import * as React from 'react';
 
 export const AddressBlock = () => {
-  const address =
-    React.useContext(AppConfigContext)?.organization?.contact?.full_address;
+  const { full_address } = useOrganizationConfig().contact;
   return (
     <Box
       component="section"
@@ -16,7 +15,7 @@ export const AddressBlock = () => {
       textAlign="center"
     >
       <Typography variant="h4">Address</Typography>
-      <Typography>{address}</Typography>
+      <Typography>{full_address}</Typography>
       <Divider />
       <NavBtn label={'Take me to church!'} />
     </Box>

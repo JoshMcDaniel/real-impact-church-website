@@ -1,6 +1,5 @@
 import { Container } from '@mui/material';
-import { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { useOrganizationConfig } from '../../config/app-config-hooks';
 import * as React from 'react';
 
 type TitleLogoImageProps = {
@@ -9,8 +8,7 @@ type TitleLogoImageProps = {
 };
 
 export const TitleLogoImage = (props: TitleLogoImageProps) => {
-  const configContext = useContext(AppConfigContext);
-  const { path, description } = configContext.organization.logos.title_logo;
+  const { path, description } = useOrganizationConfig().logos.title_logo;
 
   return (
     <Container

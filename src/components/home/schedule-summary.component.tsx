@@ -1,8 +1,7 @@
 import { Divider, Paper } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
-import { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { useOrganizationConfig } from '../../config/app-config-hooks';
 import {
   Service,
   ScheduleSummaryService,
@@ -10,8 +9,7 @@ import {
 import React from 'react';
 
 export const ScheduleSummary = () => {
-  const configContext = useContext(AppConfigContext);
-  const services: Service[] = configContext.organization.schedule.services;
+  const services: Service[] = useOrganizationConfig().schedule.services;
 
   return (
     <Paper

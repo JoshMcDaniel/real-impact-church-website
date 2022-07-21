@@ -7,9 +7,9 @@ import {
   useTheme,
 } from '@mui/material';
 import axios, { AxiosRequestConfig } from 'axios';
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { useEventsConfig } from '../../config/app-config-hooks';
 import LoadingIndication from '../common/loading-indication.component';
 import { Event } from './Event';
 import EventDateTimeCard from './event-date-time-card.component';
@@ -21,7 +21,7 @@ const SelectedEvent = () => {
   const [event, setEvent] = React.useState<Event>();
   const [requestPending, setRequestPending] = React.useState<boolean>(false);
 
-  const eventsConfig = useContext(AppConfigContext).website.events;
+  const { routes } = useEventsConfig();
   const theme = useTheme();
   const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
   const eventName = useLocation().pathname.split('/').pop();
@@ -40,7 +40,7 @@ const SelectedEvent = () => {
       params: { route: eventName },
     };
 
-    axios.get(eventsConfig.routes.get_event, config).then((res) => {
+    axios.get(routes.get_event, config).then((res) => {
       if (res.data) {
         setEvent(new Event(res.data));
       }

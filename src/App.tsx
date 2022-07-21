@@ -6,8 +6,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/home/home.component';
 import Events from './components/events/events.component';
 import ResponsiveAppBar from './components/topbar/responsive-app-bar.component';
-import { AppConfigContext } from './contexts/app-config/app-config.service';
-import appConfig from './contexts/app-config/config.json';
 import About from './components/about/about.component';
 import Giving from './components/giving/giving.component';
 import Connect from './components/connect/connect.component';
@@ -22,31 +20,29 @@ import ScrollToTop from './common/scroll-to-top';
 
 function App() {
   return (
-    <AppConfigContext.Provider value={appConfig}>
-      <BrowserRouter>
-        <ScrollToTop />
-        <React.Fragment>
-          <ThemeProvider theme={theme}>
-            <CssBaseline enableColorScheme />
-            <ResponsiveAppBar />
-            <Box className="content-container">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/media/*" element={<Media />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/events/*" element={<Events />} />
-                <Route path="/giving" element={<Giving />} />
-                <Route path="/connect" element={<Connect />} />
-                <Route path="/beliefs" element={<Beliefs />} />
-                <Route path="/staff" element={<Staff />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Box>
-            <Footer />
-          </ThemeProvider>
-        </React.Fragment>
-      </BrowserRouter>
-    </AppConfigContext.Provider>
+    <BrowserRouter>
+      <ScrollToTop />
+      <React.Fragment>
+        <ThemeProvider theme={theme}>
+          <CssBaseline enableColorScheme />
+          <ResponsiveAppBar />
+          <Box className="content-container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/media/*" element={<Media />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/events/*" element={<Events />} />
+              <Route path="/giving" element={<Giving />} />
+              <Route path="/connect" element={<Connect />} />
+              <Route path="/beliefs" element={<Beliefs />} />
+              <Route path="/staff" element={<Staff />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Box>
+          <Footer />
+        </ThemeProvider>
+      </React.Fragment>
+    </BrowserRouter>
   );
 }
 

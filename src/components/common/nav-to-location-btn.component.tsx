@@ -1,6 +1,5 @@
 import { Fab } from '@mui/material';
-import { useContext } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import { useOrganizationConfig } from '../../config/app-config-hooks';
 import NavigationIcon from '@mui/icons-material/Navigation';
 import * as React from 'react';
 
@@ -9,7 +8,7 @@ type NavToLocationBtnProps = {
 };
 
 export const NavToLocationBtn = (props: NavToLocationBtnProps) => {
-  const configContext = useContext(AppConfigContext);
+  const { google_maps_link } = useOrganizationConfig().contact;
   return (
     <Fab
       variant="extended"
@@ -20,7 +19,7 @@ export const NavToLocationBtn = (props: NavToLocationBtnProps) => {
         width: 'fit-content',
         justifySelf: 'center',
       }}
-      href={configContext.organization.contact.google_maps_link}
+      href={google_maps_link}
     >
       <NavigationIcon sx={{ mr: 1 }} />
       {props.label || "Let's Go!"}

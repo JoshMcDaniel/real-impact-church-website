@@ -6,8 +6,8 @@ import {
   useTheme,
 } from '@mui/material';
 import axios from 'axios';
-import React, { useContext, useState } from 'react';
-import { AppConfigContext } from '../../contexts/app-config/app-config.service';
+import React, { useState } from 'react';
+import { useConnectConfig } from '../../config/app-config-hooks';
 import CommonSnackbar, {
   CommonSnackbarState,
   initialCommonSnackbarState,
@@ -18,8 +18,7 @@ import ConnectMainForm, {
 } from './connect-main-form.component';
 
 export const Connect = () => {
-  const connectConfig = useContext(AppConfigContext).website.connect;
-  const { snackbar } = connectConfig;
+  const { snackbar, request_connection_path, subtitle } = useConnectConfig();
 
   const theme = useTheme();
   const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
@@ -38,9 +37,8 @@ export const Connect = () => {
   const submitConnectionForm = (form: ConnectMainFormContent): void => {
     setRequestPending(true);
 
-    const url = connectConfig.request_connection_path;
     axios
-      .post(url, form)
+      .post(request_connection_path, form)
       .then(() => {
         setSnackbarState({
           open: true,
@@ -63,7 +61,7 @@ export const Connect = () => {
     <Box display="grid" gap="1rem" padding={isMediumView ? '2rem' : '1rem'}>
       <Box>
         <Typography variant="h4">Connect</Typography>
-        <Typography variant="subtitle1">{connectConfig.subtitle}</Typography>
+        <Typography variant="subtitle1">{subtitle}</Typography>
       </Box>
       <Divider></Divider>
       <Box display="grid" width="100%">
