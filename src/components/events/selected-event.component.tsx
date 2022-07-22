@@ -22,8 +22,7 @@ const SelectedEvent = () => {
   const [requestPending, setRequestPending] = React.useState<boolean>(false);
 
   const { routes } = useEventsConfig();
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
   const eventName = useLocation().pathname.split('/').pop();
 
   useEffect(() => {

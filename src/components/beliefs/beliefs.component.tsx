@@ -20,8 +20,7 @@ export type BeliefsContainer = {
 
 export const Beliefs = () => {
   const beliefsConfig: BeliefsContainer = useBeliefsConfig();
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
 
   return (
     <Box

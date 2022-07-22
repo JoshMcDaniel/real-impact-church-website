@@ -10,8 +10,7 @@ export const Staff = () => {
   const [staff, setStaff] = useState([]);
 
   const { routes, header_text } = useStaffConfig();
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
 
   useEffect(() => {
     if (!staff.length) {

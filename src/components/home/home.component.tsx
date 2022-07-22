@@ -34,8 +34,7 @@ export const Home = () => {
   const subText = homeConfigContext.intro_section.text.sub;
   const imagePath = homeConfigContext.intro_section.images.intro_image.path;
 
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
 
   return (
     <Fade

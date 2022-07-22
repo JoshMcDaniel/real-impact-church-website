@@ -16,8 +16,7 @@ type Props = {
 };
 
 const MostRecentVideo = (props: Props) => {
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
   const { video } = props;
 
   return (

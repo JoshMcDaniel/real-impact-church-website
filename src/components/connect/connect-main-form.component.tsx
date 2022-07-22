@@ -65,8 +65,7 @@ const ConnectMainForm = (props: Props) => {
     );
   };
 
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
 
   return (
     <Box component="form" display="grid" gap="1rem" gridAutoFlow="row">

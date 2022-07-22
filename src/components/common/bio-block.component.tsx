@@ -17,8 +17,7 @@ const bioBlockConfig = {
 };
 
 export const BioBlockSkeleton = () => {
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
 
   return (
     <Box
@@ -63,8 +62,7 @@ type BioBlocProps = {
 };
 
 export const BioBlock = (props: BioBlocProps) => {
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
   const avatarProps = {
     ...bioBlockConfig.avatar,
     alt: `${props.person.firstName} ${props.person.lastName}`,

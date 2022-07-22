@@ -16,8 +16,7 @@ export const About = () => {
   const imagePath = aboutConfig.intro_section.images.intro_image.path;
   const tiles: NavTileProps[] = aboutConfig.nav_tiles.tiles;
 
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
 
   return (
     <Box component="section">

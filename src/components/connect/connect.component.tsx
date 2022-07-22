@@ -20,8 +20,7 @@ import ConnectMainForm, {
 export const Connect = () => {
   const { snackbar, request_connection_path, subtitle } = useConnectConfig();
 
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
 
   const [requestPending, setRequestPending] = useState<boolean>(false);
   const [snackbarState, setSnackbarState] = useState<CommonSnackbarState>(

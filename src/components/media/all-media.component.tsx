@@ -20,8 +20,7 @@ export const AllMedia = () => {
   const { api_url, channel_id } = useOrganizationConfig().social_media.youtube;
   const { most_recent, most_popular } = useMediaConfig().media_page.youtube;
 
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
 
   const [recentRequestPending, setRecentRequestPending] =
     useState<boolean>(false);

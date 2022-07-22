@@ -15,8 +15,7 @@ export const AllEvents = () => {
   const [requestPending, setRequestPending] = React.useState<boolean>(false);
 
   const eventsConfig = useEventsConfig();
-  const theme = useTheme();
-  const isMediumView = useMediaQuery(theme.breakpoints.up('md'));
+  const isMediumView = useMediaQuery(useTheme().breakpoints.up('md'));
 
   useEffect(() => {
     if (!events.length) {
