@@ -69,6 +69,7 @@ export const Home = () => {
           </Stack>
           <ImageList
             cols={isMediumView ? 2 : 1}
+            rowHeight={isMediumView ? 267 : 500}
             gap={32}
             sx={{
               padding: '0',
@@ -78,19 +79,21 @@ export const Home = () => {
             }}
           >
             {items.map((item, index) => (
-              <Link to={item.nav_to_route} key={index}>
-                <ImageListItem key={index}>
-                  <img
-                    src={item.image.path}
-                    alt={item.image.description}
-                    loading="lazy"
-                  />
-                  <ImageListItemBar
-                    title={item.info_text.title}
-                    subtitle={item.info_text.subtitle}
-                  />
-                </ImageListItem>
-              </Link>
+              <Box boxShadow={3} key={index}>
+                <Link to={item.nav_to_route}>
+                  <ImageListItem className="full-img-height-container">
+                    <img
+                      src={item.image.path}
+                      alt={item.image.description}
+                      loading="lazy"
+                    />
+                    <ImageListItemBar
+                      title={item.info_text.title}
+                      subtitle={item.info_text.subtitle}
+                    />
+                  </ImageListItem>
+                </Link>
+              </Box>
             ))}
           </ImageList>
         </Container>

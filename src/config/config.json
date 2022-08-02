@@ -19,29 +19,29 @@
       "home_summary_items": [
         {
           "image": {
-            "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
+            "path": "https://drive.google.com/uc?id=1bWPH3ie_N52ELU91beJYrY9yYnWq15q_",
             "description": ""
           },
           "info_text": {
             "title": "Who are we?",
-            "subtitle": "We are a church"
+            "subtitle": "Local Church | Global Vision"
           },
           "nav_to_route": "/about"
         },
         {
           "image": {
-            "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
+            "path": "https://drive.google.com/uc?id=1eFo84ubX3oisqxx_WDHsiWIopuXT-8d7",
             "description": ""
           },
           "info_text": {
             "title": "Media",
-            "subtitle": "Checkout our latest and most popular sermons"
+            "subtitle": "Watch our latest sermons"
           },
           "nav_to_route": "/media"
         },
         {
           "image": {
-            "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
+            "path": "https://drive.google.com/uc?id=1WIxM0-XLxC8Tn46OBbjSPwui-pbo2Reo",
             "description": ""
           },
           "info_text": {
@@ -52,23 +52,23 @@
         },
         {
           "image": {
-            "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
+            "path": "https://drive.google.com/uc?id=1CTYUbXYsnMfBpkUmQIqhm6qQZX6U8E_T",
             "description": ""
           },
           "info_text": {
             "title": "Giving",
-            "subtitle": "Something about giving"
+            "subtitle": "See how you can give back"
           },
           "nav_to_route": "/giving"
         },
         {
           "image": {
-            "path": "https://drive.google.com/uc?id=12wwYlx5JC3iJVW7bFzCySkc9wZTqc0jx",
+            "path": "https://drive.google.com/uc?id=1GSi4_Kbm0auo9mDnS122_LgvlUASl2Kg",
             "description": ""
           },
           "info_text": {
             "title": "Get connected",
-            "subtitle": "Something about getting connected"
+            "subtitle": "Become part of our loving community"
           },
           "nav_to_route": "/connect"
         }
