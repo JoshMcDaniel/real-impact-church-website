@@ -69,7 +69,7 @@ export const Home = () => {
           </Stack>
           <ImageList
             cols={isMediumView ? 2 : 1}
-            rowHeight={isMediumView ? 267 : 500}
+            rowHeight={250}
             gap={32}
             sx={{
               padding: '0',
