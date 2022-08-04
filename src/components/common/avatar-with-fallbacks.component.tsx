@@ -2,13 +2,11 @@ import { Avatar, Skeleton } from '@mui/material';
 import React, { useState } from 'react';
 
 type AvatarProps = {
-  avatarProps: {
-    alt: string;
-    src: string;
-    justifySelf: string;
-    maxHeight: string;
-    maxWidth: string;
-  };
+  alt: string;
+  src: string;
+  justifySelf: string;
+  maxHeight: string;
+  maxWidth: string;
 };
 
 export const AvatarWithFallbacks = (props: AvatarProps) => {
@@ -21,13 +19,13 @@ export const AvatarWithFallbacks = (props: AvatarProps) => {
   return (
     <React.Fragment>
       <Avatar
-        alt={props.avatarProps.alt}
-        src={props.avatarProps.src}
+        alt={props.alt}
+        src={props.src}
         sx={{
           display: imageLoaded ? 'grid' : 'none',
-          justifySelf: props.avatarProps.justifySelf,
-          maxHeight: props.avatarProps.maxHeight,
-          maxWidth: props.avatarProps.maxWidth,
+          justifySelf: props.justifySelf,
+          maxHeight: props.maxHeight,
+          maxWidth: props.maxWidth,
           width: '100%',
           height: '100%',
         }}
@@ -37,9 +35,9 @@ export const AvatarWithFallbacks = (props: AvatarProps) => {
         <Skeleton
           variant="circular"
           sx={{
-            justifySelf: props.avatarProps.justifySelf,
-            maxHeight: props.avatarProps.maxHeight,
-            maxWidth: props.avatarProps.maxWidth,
+            justifySelf: props.justifySelf,
+            maxHeight: props.maxHeight,
+            maxWidth: props.maxWidth,
             width: '100%',
             height: '100%',
           }}

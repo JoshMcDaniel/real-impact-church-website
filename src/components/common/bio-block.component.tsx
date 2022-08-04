@@ -77,7 +77,7 @@ export const BioBlock = (props: BioBlocProps) => {
       gridTemplateRows={isMediumView ? '1fr' : '300px 1fr'}
       height={isMediumView ? '300px' : 'auto'}
     >
-      <AvatarWithFallbacks avatarProps={avatarProps} />
+      <AvatarWithFallbacks {...avatarProps} />
       <Box padding={isMediumView ? '2rem' : '2rem 1rem'}>
         <Typography
           variant="h5"
