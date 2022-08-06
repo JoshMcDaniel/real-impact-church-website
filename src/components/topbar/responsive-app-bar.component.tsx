@@ -22,7 +22,6 @@ import SvgIcon from '@mui/icons-material/Event';
 import { Close } from '@mui/icons-material';
 import { useOrganizationConfig } from '../../config/app-config-hooks';
 import AvatarWithFallbacks from '../common/avatar-with-fallbacks.component';
-import { Divider } from '@mui/material';
 
 const ResponsiveAppBar = () => {
   const pages = [
@@ -82,6 +81,7 @@ const ResponsiveAppBar = () => {
                     justifyItems: 'space-between',
                     alignItems: 'center',
                     padding: '0 16px',
+                    marginBottom: '8px',
                   }}
                 >
                   <AvatarWithFallbacks
@@ -105,11 +105,6 @@ const ResponsiveAppBar = () => {
                     <Close />
                   </IconButton>
                 </AppBar>
-                <Divider
-                  sx={{
-                    marginBottom: '8px',
-                  }}
-                />
                 {pages.map((page) => (
                   <MenuItem
                     key={page.displayText}

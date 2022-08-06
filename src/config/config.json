@@ -556,20 +556,9 @@
       }
     },
     "schedule": {
-      "services": [
-        {
-          "title": "Worship Service",
-          "description": "Join us this Sunday! We're saving a place just for you!",
-          "day_of_week": "Sunday",
-          "time": "10:30am"
-        },
-        {
-          "title": "Worship On Wednesday (W.O.W.)",
-          "description": "Our W.O.W. service is a mid-week worship service to help get us all through the week. It's a great time of fellowship and praise and we would love to see you there!",
-          "day_of_week": "Wednesday",
-          "time": "7:00pm"
-        }
-      ]
+      "services": {
+        "route": "https://data.mongodb-api.com/app/real-impact-church-qdvgb/endpoint/services"
+      }
     }
   }
 }

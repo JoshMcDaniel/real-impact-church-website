@@ -4,7 +4,7 @@ import React from 'react';
 
 export type Service = {
   title: string;
-  day_of_week: string;
+  dayOfWeek: string;
   time: string;
   description: string;
 };
@@ -14,7 +14,7 @@ export type ScheduleSummaryServiceProps = {
 };
 
 export const ScheduleSummaryService = (props: ScheduleSummaryServiceProps) => {
-  const { title, day_of_week, time, description } = props.service;
+  const { title, dayOfWeek, time, description } = props.service;
 
   return (
     <Box
@@ -31,7 +31,7 @@ export const ScheduleSummaryService = (props: ScheduleSummaryServiceProps) => {
         }}
       >
         <Typography variant="subtitle1" fontWeight="700" color="secondary">
-          {day_of_week} | <time>{time}</time>
+          {dayOfWeek} | <time>{time}</time>
         </Typography>
         <Typography variant="body2" component="summary">
           {description}
