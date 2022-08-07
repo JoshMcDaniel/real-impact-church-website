@@ -31,7 +31,7 @@ const OtherGiving = () => {
             textAlign: 'left',
             width: isSmallView ? '400px' : '100%',
             display: 'grid',
-            gridTemplateColumns: '25% 1fr',
+            gridTemplateColumns: '1fr 3fr',
             gap: isSmallView ? '2rem' : '1rem',
             alignItems: 'center',
           }}
